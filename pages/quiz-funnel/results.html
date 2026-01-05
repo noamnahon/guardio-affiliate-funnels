@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Your personalized online security assessment results and recommendations.">
+  <title>Your Security Score | Assessment Results</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="quiz-header">
+    <div class="container">
+      <a href="../../index.html" class="logo">Security Check</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Results Section -->
+    <section class="results-section">
+      <div class="container container-md">
+        <div class="results-card">
+          <!-- Score Display -->
+          <div class="score-display" id="score-display">
+            <div class="score-circle" id="score-circle">
+              <span class="score-number" id="score-number">0</span>
+              <span class="score-label">Security Score</span>
+            </div>
+          </div>
+
+          <!-- Risk Level -->
+          <div class="risk-level" id="risk-level">
+            <span class="risk-badge risk-high" id="risk-badge">High Risk</span>
+            <h1 id="result-title">Your Online Security Needs Attention</h1>
+            <p class="result-description" id="result-description">
+              Based on your responses, you're more vulnerable to online threats than the average user. Here's what you can do to protect yourself.
+            </p>
+          </div>
+
+          <!-- Vulnerabilities -->
+          <div class="vulnerabilities">
+            <h2>Key Vulnerabilities Detected</h2>
+            <div class="vulnerability-list" id="vulnerability-list">
+              <div class="vulnerability-item">
+                <span class="vuln-icon">⚠️</span>
+                <div class="vuln-content">
+                  <h4>Password Security</h4>
+                  <p>Reusing passwords puts all your accounts at risk if one is breached.</p>
+                </div>
+              </div>
+              <div class="vulnerability-item">
+                <span class="vuln-icon">⚠️</span>
+                <div class="vuln-content">
+                  <h4>Phishing Susceptibility</h4>
+                  <p>You may be vulnerable to sophisticated phishing attacks.</p>
+                </div>
+              </div>
+              <div class="vulnerability-item">
+                <span class="vuln-icon">⚠️</span>
+                <div class="vuln-content">
+                  <h4>No Active Protection</h4>
+                  <p>Without browser security tools, threats can go undetected.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recommendation -->
+          <div class="recommendation">
+            <div class="recommendation-header">
+              <span class="badge badge-success">Recommended Solution</span>
+              <h2>Protect Yourself with Guardio</h2>
+            </div>
+            <p>Guardio provides real-time protection against the exact threats you're vulnerable to:</p>
+            <ul class="benefits-list">
+              <li>
+                <span class="benefit-check">✓</span>
+                <span>Blocks phishing sites before you enter any data</span>
+              </li>
+              <li>
+                <span class="benefit-check">✓</span>
+                <span>Alerts you when your passwords appear in data breaches</span>
+              </li>
+              <li>
+                <span class="benefit-check">✓</span>
+                <span>Stops malicious downloads automatically</span>
+              </li>
+              <li>
+                <span class="benefit-check">✓</span>
+                <span>Monitors the dark web for your personal information</span>
+              </li>
+            </ul>
+            <div class="cta-box">
+              <a href="#" class="btn btn-primary btn-lg">Get Protected Now - 7 Days Free</a>
+              <p class="cta-subtext">No credit card required • Cancel anytime</p>
+            </div>
+          </div>
+
+          <!-- Social Proof -->
+          <div class="social-proof">
+            <div class="proof-stats flex items-center justify-center gap-8">
+              <div class="proof-item">
+                <span class="proof-number">4.8★</span>
+                <span class="proof-label">Chrome Store Rating</span>
+              </div>
+              <div class="proof-item">
+                <span class="proof-number">1M+</span>
+                <span class="proof-label">Active Users</span>
+              </div>
+              <div class="proof-item">
+                <span class="proof-number">50M+</span>
+                <span class="proof-label">Threats Blocked</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Retake Option -->
+        <div class="retake-section text-center">
+          <a href="index.html" class="btn btn-outline">Retake Assessment</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="quiz-footer">
+    <div class="container text-center">
+      <p>© 2024 Security Assessment. Results are for educational purposes only.</p>
+    </div>
+  </footer>
+
+  <script src="../../js/main.js"></script>
+  <script>
+    // Get score from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const score = parseInt(urlParams.get('score')) || 50;
+
+    // Update score display
+    document.getElementById('score-number').textContent = score;
+
+    // Set score circle color based on score
+    const scoreCircle = document.getElementById('score-circle');
+    const riskBadge = document.getElementById('risk-badge');
+    const resultTitle = document.getElementById('result-title');
+    const resultDescription = document.getElementById('result-description');
+
+    if (score >= 75) {
+      scoreCircle.classList.add('score-good');
+      riskBadge.textContent = 'Low Risk';
+      riskBadge.classList.remove('risk-high');
+      riskBadge.classList.add('risk-low');
+      resultTitle.textContent = 'Great Job! Your Security is Strong';
+      resultDescription.textContent = 'You\'re practicing good security habits. However, even security-conscious users benefit from additional protection layers. Here\'s how you can stay one step ahead of evolving threats.';
+    } else if (score >= 50) {
+      scoreCircle.classList.add('score-medium');
+      riskBadge.textContent = 'Medium Risk';
+      riskBadge.classList.remove('risk-high');
+      riskBadge.classList.add('risk-medium');
+      resultTitle.textContent = 'Room for Improvement';
+      resultDescription.textContent = 'Your security practices are average, but there are gaps that could leave you vulnerable. Small changes can make a big difference in your online safety.';
+    } else {
+      scoreCircle.classList.add('score-low');
+      // Default high risk state is already set
+    }
+
+    // Animate score number
+    let currentScore = 0;
+    const scoreElement = document.getElementById('score-number');
+    const animateScore = setInterval(() => {
+      if (currentScore < score) {
+        currentScore += 2;
+        if (currentScore > score) currentScore = score;
+        scoreElement.textContent = currentScore;
+      } else {
+        clearInterval(animateScore);
+      }
+    }, 20);
+  </script>
+</body>
+</html>
+

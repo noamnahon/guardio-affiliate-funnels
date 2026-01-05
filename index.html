@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Guardio Affiliate Funnel Landing Pages - A collection of high-converting landing pages for Guardio's partner program.">
+  <title>Guardio Affiliate Funnels - Hub</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Hub Page Specific Styles */
+    .hero {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+      color: var(--color-white);
+      padding: var(--spacing-16) var(--spacing-4);
+      text-align: center;
+    }
+
+    .hero h1 {
+      color: var(--color-white);
+      margin-bottom: var(--spacing-4);
+    }
+
+    .hero p {
+      font-size: var(--font-size-lg);
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .funnel-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--spacing-6);
+    }
+
+    @media (min-width: 768px) {
+      .funnel-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .funnel-card {
+      background: var(--color-white);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
+      padding: var(--spacing-8);
+      transition: transform var(--transition-base), box-shadow var(--transition-base);
+      text-decoration: none;
+      display: block;
+    }
+
+    .funnel-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .funnel-card h3 {
+      color: var(--color-gray-900);
+      margin-bottom: var(--spacing-3);
+    }
+
+    .funnel-card p {
+      color: var(--color-gray-600);
+      margin-bottom: var(--spacing-4);
+      line-height: var(--line-height-relaxed);
+    }
+
+    .funnel-card .card-link {
+      color: var(--color-primary);
+      font-weight: var(--font-weight-semibold);
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-2);
+    }
+
+    .funnel-card .card-link::after {
+      content: '→';
+      transition: transform var(--transition-fast);
+    }
+
+    .funnel-card:hover .card-link::after {
+      transform: translateX(4px);
+    }
+
+    .funnel-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
+      color: var(--color-white);
+      font-weight: var(--font-weight-bold);
+      border-radius: var(--radius-lg);
+      margin-bottom: var(--spacing-4);
+    }
+
+    footer {
+      background-color: var(--color-gray-900);
+      color: var(--color-gray-400);
+      text-align: center;
+      padding: var(--spacing-8) var(--spacing-4);
+    }
+
+    footer p {
+      font-size: var(--font-size-sm);
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <h1>Guardio Affiliate Funnels</h1>
+      <p>A collection of high-converting landing pages designed for Guardio's partner program. Explore each funnel type below.</p>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Available Funnel Types</h2>
+        <p class="section-subtitle">Click on any funnel to preview the landing page design and structure.</p>
+      </div>
+
+      <div class="funnel-grid">
+        <!-- Top 10 Comparison Funnel -->
+        <a href="pages/top-10-comparison/index.html" class="funnel-card">
+          <div class="funnel-number">1</div>
+          <h3>Top 10 Comparison</h3>
+          <p>A listicle-style comparison page ranking the best online security solutions. Guardio featured prominently with detailed feature comparisons and trust signals.</p>
+          <span class="card-link">View Funnel</span>
+        </a>
+
+        <!-- Quiz Funnel -->
+        <a href="pages/quiz-funnel/index.html" class="funnel-card">
+          <div class="funnel-number">2</div>
+          <h3>Quiz Funnel</h3>
+          <p>An interactive assessment that evaluates users' online security habits and vulnerabilities, leading to personalized Guardio recommendations.</p>
+          <span class="card-link">View Funnel</span>
+        </a>
+
+        <!-- VS Comparison Funnel -->
+        <a href="pages/vs-comparison/index.html" class="funnel-card">
+          <div class="funnel-number">3</div>
+          <h3>VS Comparison</h3>
+          <p>A head-to-head comparison page showcasing Guardio against a competitor, highlighting key differentiators and advantages.</p>
+          <span class="card-link">View Funnel</span>
+        </a>
+
+        <!-- Pre-lander Funnel -->
+        <a href="pages/pre-lander/index.html" class="funnel-card">
+          <div class="funnel-number">4</div>
+          <h3>Pre-lander</h3>
+          <p>A warm-up landing page that educates visitors about online threats before directing them to the main Guardio offer page.</p>
+          <span class="card-link">View Funnel</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Guardio Affiliate Funnel Landing Pages</p>
+      <p>Created by Noam Nahon | Affiliate Manager Lead Assignment</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
+

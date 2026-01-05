@@ -1,0 +1,428 @@
+/* ==========================================================================
+   Top 10 Comparison Page Styles
+   ========================================================================== */
+
+/* Header */
+.top-header {
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-gray-200);
+  padding: var(--spacing-4) 0;
+}
+
+.nav-logo {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-xl);
+  color: var(--color-gray-900);
+}
+
+.last-updated {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-500);
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(180deg, var(--color-gray-50) 0%, var(--color-white) 100%);
+  padding: var(--spacing-12) var(--spacing-4);
+  text-align: center;
+}
+
+.hero-section h1 {
+  margin-top: var(--spacing-4);
+  margin-bottom: var(--spacing-4);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-gray-600);
+  max-width: 600px;
+  margin: 0 auto var(--spacing-8);
+  line-height: var(--line-height-relaxed);
+}
+
+.trust-indicators {
+  flex-wrap: wrap;
+}
+
+.trust-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-4);
+}
+
+.trust-number {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+}
+
+.trust-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-500);
+}
+
+/* Rankings Section */
+.rankings-section {
+  background-color: var(--color-white);
+}
+
+/* Ranking Card */
+.ranking-card {
+  display: flex;
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-xl);
+  margin-bottom: var(--spacing-6);
+  overflow: hidden;
+  transition: box-shadow var(--transition-base);
+}
+
+.ranking-card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.ranking-featured {
+  border: 2px solid var(--color-primary);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Rank Badge */
+.rank-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+  padding: var(--spacing-4);
+  background: var(--color-gray-100);
+}
+
+.rank-1 {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: var(--color-white);
+}
+
+.rank-2 {
+  background: linear-gradient(135deg, #64748b 0%, #475569 100%);
+  color: var(--color-white);
+}
+
+.rank-3 {
+  background: linear-gradient(135deg, #b45309 0%, #92400e 100%);
+  color: var(--color-white);
+}
+
+.rank-number {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.rank-label {
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: var(--spacing-1);
+}
+
+/* Ranking Content */
+.ranking-content {
+  flex: 1;
+  padding: var(--spacing-6);
+}
+
+.ranking-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-4);
+}
+
+.product-info {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+}
+
+.product-logo-placeholder {
+  width: 80px;
+  height: 50px;
+  background: var(--color-gray-100);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-gray-500);
+}
+
+.product-details h2 {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--spacing-1);
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.stars {
+  color: #f59e0b;
+  letter-spacing: 2px;
+}
+
+.rating-score {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-700);
+}
+
+.product-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.cta-note {
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-500);
+}
+
+/* Ranking Body */
+.product-description {
+  color: var(--color-gray-600);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-6);
+}
+
+.product-summary {
+  color: var(--color-gray-600);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Features Grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-3);
+  margin-bottom: var(--spacing-6);
+}
+
+@media (min-width: 768px) {
+  .features-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-700);
+}
+
+.feature-icon {
+  color: var(--color-success);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Pros & Cons */
+.pros-cons {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-6);
+  padding-top: var(--spacing-6);
+  border-top: 1px solid var(--color-gray-200);
+}
+
+@media (min-width: 768px) {
+  .pros-cons {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.pros h4,
+.cons h4 {
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--spacing-3);
+}
+
+.pros h4 {
+  color: var(--color-success);
+}
+
+.cons h4 {
+  color: var(--color-error);
+}
+
+.pros ul,
+.cons ul {
+  list-style: none;
+}
+
+.pros li,
+.cons li {
+  position: relative;
+  padding-left: var(--spacing-5);
+  margin-bottom: var(--spacing-2);
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-600);
+}
+
+.pros li::before {
+  content: '+';
+  position: absolute;
+  left: 0;
+  color: var(--color-success);
+  font-weight: var(--font-weight-bold);
+}
+
+.cons li::before {
+  content: '−';
+  position: absolute;
+  left: 0;
+  color: var(--color-error);
+  font-weight: var(--font-weight-bold);
+}
+
+/* More Rankings Placeholder */
+.more-rankings {
+  padding: var(--spacing-8);
+  background: var(--color-gray-50);
+  border-radius: var(--radius-lg);
+  border: 2px dashed var(--color-gray-300);
+}
+
+/* Comparison Table */
+.comparison-table-wrapper {
+  overflow-x: auto;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: var(--spacing-4);
+  text-align: left;
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.comparison-table th {
+  background: var(--color-gray-800);
+  color: var(--color-white);
+  font-weight: var(--font-weight-semibold);
+}
+
+.comparison-table th.highlight {
+  background: var(--color-primary);
+}
+
+.comparison-table td.highlight {
+  background: rgba(26, 115, 232, 0.05);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary);
+}
+
+.comparison-table tbody tr:hover {
+  background: var(--color-gray-50);
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: var(--color-white);
+}
+
+.cta-section h2 {
+  color: var(--color-white);
+  margin-bottom: var(--spacing-4);
+}
+
+.cta-section p {
+  opacity: 0.9;
+  margin-bottom: var(--spacing-6);
+}
+
+.cta-section .btn-primary {
+  background: var(--color-white);
+  color: var(--color-primary);
+}
+
+.cta-section .btn-primary:hover {
+  background: var(--color-gray-100);
+}
+
+.cta-disclaimer {
+  font-size: var(--font-size-sm);
+  opacity: 0.8;
+  margin-top: var(--spacing-4);
+  margin-bottom: 0;
+}
+
+/* Footer */
+.site-footer {
+  background: var(--color-gray-900);
+  color: var(--color-gray-400);
+  padding: var(--spacing-8) var(--spacing-4);
+  text-align: center;
+}
+
+.disclaimer {
+  font-size: var(--font-size-xs);
+  max-width: 600px;
+  margin: 0 auto var(--spacing-4);
+  line-height: var(--line-height-relaxed);
+}
+
+.copyright {
+  font-size: var(--font-size-sm);
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .ranking-card {
+    flex-direction: column;
+  }
+
+  .rank-badge {
+    flex-direction: row;
+    min-width: auto;
+    width: 100%;
+    gap: var(--spacing-2);
+  }
+
+  .rank-label {
+    margin-top: 0;
+  }
+
+  .ranking-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .product-cta {
+    width: 100%;
+  }
+
+  .product-cta .btn {
+    width: 100%;
+  }
+}
+
