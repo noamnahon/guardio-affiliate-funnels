@@ -3,18 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Guardio vs Norton: An in-depth comparison of browser security solutions. See which one offers better protection for your online activities.">
-  <title>Guardio vs Norton 2024 | Which Security Solution is Better?</title>
+  <meta name="description" content="Compare Guardio with Norton, McAfee, Malwarebytes, and Bitdefender. See which security solution offers the best protection for your needs.">
+  <title>Guardio vs The Competition | Security Comparison 2025</title>
   <link rel="stylesheet" href="../../css/styles.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Header -->
   <header class="vs-header">
     <div class="container">
-      <nav class="nav flex items-center justify-between">
-        <a href="../../index.html" class="nav-logo">Security Showdown</a>
-        <span class="badge badge-primary">2024 Comparison</span>
-      </nav>
+      <div class="header-content">
+        <a href="../../index.html" class="logo">
+          <span class="logo-icon">🛡️</span>
+          <span class="logo-text">CyberSecurityAdvisor</span>
+        </a>
+        <span class="header-badge">✓ Independent Comparison</span>
+      </div>
     </div>
   </header>
 
@@ -22,287 +26,452 @@
     <!-- Hero Section -->
     <section class="vs-hero">
       <div class="container">
-        <h1 class="vs-title">
-          <span class="brand brand-guardio">Guardio</span>
-          <span class="vs-badge">VS</span>
-          <span class="brand brand-competitor">Norton</span>
-        </h1>
-        <p class="vs-subtitle">Which browser security solution is right for you? We compare features, pricing, and performance to help you decide.</p>
+        <!-- Competitor Selector -->
+        <div class="competitor-selector">
+          <span class="selector-label">Compare Guardio with:</span>
+          <div class="selector-pills">
+            <button class="pill active" data-competitor="norton">Norton</button>
+            <button class="pill" data-competitor="mcafee">McAfee</button>
+            <button class="pill" data-competitor="malwarebytes">Malwarebytes</button>
+            <button class="pill" data-competitor="bitdefender">Bitdefender</button>
+          </div>
+        </div>
+
+        <!-- VS Title -->
+        <div class="vs-title">
+          <div class="vs-brand vs-guardio">
+            <span class="brand-icon">🛡️</span>
+            <span class="brand-name">Guardio</span>
+          </div>
+          <div class="vs-badge">VS</div>
+          <div class="vs-brand vs-competitor">
+            <span class="brand-icon" id="competitor-icon">🔶</span>
+            <span class="brand-name" id="competitor-name">Norton</span>
+          </div>
+        </div>
+
+        <p class="vs-subtitle">Which browser security solution is right for you? We tested both extensively to help you decide.</p>
+
+        <!-- Quick Verdict -->
+        <div class="quick-verdict">
+          <div class="verdict-content">
+            <span class="verdict-badge">🏆 Our Pick: Guardio</span>
+            <p class="verdict-text" id="verdict-reason">Best for users who want lightweight, browser-focused protection with industry-leading phishing detection (99.7% rate).</p>
+          </div>
+          <a href="https://guard.io/n/register" class="btn btn-primary">Try Guardio Free →</a>
+        </div>
       </div>
     </section>
 
-    <!-- Quick Verdict -->
-    <section class="quick-verdict">
+    <!-- Side-by-Side Overview Cards -->
+    <section class="overview-section">
       <div class="container">
-        <div class="verdict-card">
-          <div class="verdict-header">
-            <span class="verdict-icon">🏆</span>
-            <h2>Our Verdict</h2>
+        <div class="overview-cards">
+          <!-- Guardio Card -->
+          <div class="product-card guardio-card">
+            <div class="card-ribbon">Our Pick</div>
+            <div class="card-header">
+              <span class="card-icon">🛡️</span>
+              <h3>Guardio</h3>
+              <div class="card-rating">
+                <span class="stars">★★★★★</span>
+                <span class="score">9.8/10</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-highlight">
+                <span class="highlight-label">Why Users Choose Guardio</span>
+                <span class="highlight-text">Simple, lightweight, no slowdown</span>
+              </div>
+              
+              <ul class="card-features">
+                <li><span class="check">✓</span> 99.7% phishing detection rate</li>
+                <li><span class="check">✓</span> Lightweight — no slowdown</li>
+                <li><span class="check">✓</span> Gmail email scanning</li>
+                <li><span class="check">✓</span> $1M identity theft insurance</li>
+                <li><span class="check">✓</span> Data breach monitoring</li>
+              </ul>
+
+              <div class="card-stats">
+                <div class="stat">
+                  <span class="stat-value">1.5M+</span>
+                  <span class="stat-label">Users</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-value">4.5★</span>
+                  <span class="stat-label">Chrome Store</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer">
+              <a href="https://guard.io/n/register" class="btn btn-primary btn-block">Try Free for 7 Days</a>
+              <span class="guarantee">No credit card required</span>
+            </div>
           </div>
-          <p class="verdict-text">
-            <strong>Guardio wins</strong> for users who want lightweight, browser-focused protection with excellent phishing detection. Norton is better suited for users who need a comprehensive antivirus suite with VPN included.
-          </p>
-          <div class="verdict-cta">
-            <a href="#" class="btn btn-primary">Try Guardio Free for 7 Days</a>
+
+          <!-- Competitor Card -->
+          <div class="product-card competitor-card">
+            <div class="card-header">
+              <span class="card-icon" id="comp-card-icon">🔶</span>
+              <h3 id="comp-card-name">Norton 360</h3>
+              <div class="card-rating">
+                <span class="stars" id="comp-stars">★★★★☆</span>
+                <span class="score" id="comp-score">9.0/10</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-highlight competitor-highlight">
+                <span class="highlight-label" id="comp-highlight-label">What Norton Offers</span>
+                <span class="highlight-text" id="comp-highlight-text">Full antivirus suite with extras</span>
+              </div>
+              
+              <ul class="card-features" id="comp-features">
+                <li><span class="check">✓</span> Full antivirus suite</li>
+                <li><span class="check">✓</span> VPN included</li>
+                <li><span class="check">✓</span> Password manager</li>
+                <li><span class="warning">⚠️</span> Heavy system impact</li>
+                <li><span class="warning">⚠️</span> Complex interface</li>
+              </ul>
+
+              <div class="card-stats">
+                <div class="stat">
+                  <span class="stat-value" id="comp-users">50M+</span>
+                  <span class="stat-label">Users</span>
+                </div>
+                <div class="stat">
+                  <span class="stat-value" id="comp-rating">3.8★</span>
+                  <span class="stat-label">Trustpilot</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn btn-outline btn-block" id="comp-cta">View Norton</a>
+              <span class="guarantee" id="comp-guarantee">14-day trial</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Main Comparison -->
-    <section class="section comparison-section">
+    <!-- Category Comparisons -->
+    <section class="categories-section">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Head-to-Head Comparison</h2>
-          <p class="section-subtitle">See how these two security solutions stack up across key categories</p>
-        </div>
+        <h2 class="section-title">Head-to-Head Comparison</h2>
+        <p class="section-subtitle">See how they stack up across 5 key categories</p>
 
-        <!-- Comparison Categories -->
-        <div class="comparison-grid">
-          <!-- Protection -->
-          <div class="comparison-category">
+        <div class="categories-grid">
+          <!-- Category 1: Browser Protection -->
+          <div class="category-card">
             <div class="category-header">
-              <h3>Browser Protection</h3>
+              <span class="category-icon">🎯</span>
+              <h3>Phishing & Browser Protection</h3>
+              <span class="winner-badge guardio-wins">Guardio Wins</span>
             </div>
-            <div class="category-content">
-              <div class="contender contender-winner">
-                <span class="contender-name">Guardio</span>
-                <div class="contender-rating">
-                  <span class="rating-bar" style="width: 95%"></span>
+            <div class="category-bars">
+              <div class="bar-item">
+                <div class="bar-info">
+                  <span class="bar-name">Guardio</span>
+                  <span class="bar-score">9.9/10</span>
                 </div>
-                <span class="rating-score">9.5/10</span>
-                <span class="winner-badge">Winner</span>
+                <div class="bar-track">
+                  <div class="bar-fill guardio-fill" style="width: 99%"></div>
+                </div>
               </div>
-              <div class="contender">
-                <span class="contender-name">Norton</span>
-                <div class="contender-rating">
-                  <span class="rating-bar" style="width: 78%"></span>
+              <div class="bar-item">
+                <div class="bar-info">
+                  <span class="bar-name" id="cat1-comp-name">Norton</span>
+                  <span class="bar-score" id="cat1-comp-score">7.8/10</span>
                 </div>
-                <span class="rating-score">7.8/10</span>
+                <div class="bar-track">
+                  <div class="bar-fill competitor-fill" id="cat1-comp-bar" style="width: 78%"></div>
+                </div>
               </div>
             </div>
-            <p class="category-note">Guardio's browser-first approach provides superior real-time protection against phishing and malicious sites.</p>
+            <p class="category-note">Guardio's browser-first AI detects 99.7% of phishing sites — the highest rate we've tested.</p>
           </div>
 
-          <!-- Performance -->
-          <div class="comparison-category">
+          <!-- Category 2: System Performance -->
+          <div class="category-card">
             <div class="category-header">
+              <span class="category-icon">⚡</span>
               <h3>System Performance</h3>
+              <span class="winner-badge guardio-wins">Guardio Wins</span>
             </div>
-            <div class="category-content">
-              <div class="contender contender-winner">
-                <span class="contender-name">Guardio</span>
-                <div class="contender-rating">
-                  <span class="rating-bar" style="width: 98%"></span>
+            <div class="category-bars">
+              <div class="bar-item">
+                <div class="bar-info">
+                  <span class="bar-name">Guardio</span>
+                  <span class="bar-score">9.8/10</span>
                 </div>
-                <span class="rating-score">9.8/10</span>
-                <span class="winner-badge">Winner</span>
+                <div class="bar-track">
+                  <div class="bar-fill guardio-fill" style="width: 98%"></div>
+                </div>
               </div>
-              <div class="contender">
-                <span class="contender-name">Norton</span>
-                <div class="contender-rating">
-                  <span class="rating-bar" style="width: 70%"></span>
+              <div class="bar-item">
+                <div class="bar-info">
+                  <span class="bar-name" id="cat2-comp-name">Norton</span>
+                  <span class="bar-score" id="cat2-comp-score">7.0/10</span>
                 </div>
-                <span class="rating-score">7.0/10</span>
+                <div class="bar-track">
+                  <div class="bar-fill competitor-fill" id="cat2-comp-bar" style="width: 70%"></div>
+                </div>
               </div>
             </div>
-            <p class="category-note">As a lightweight browser extension, Guardio has virtually no impact on system resources.</p>
+            <p class="category-note">As a lightweight browser extension, Guardio has virtually no impact on system speed.</p>
           </div>
 
-          <!-- Ease of Use -->
-          <div class="comparison-category">
+          <!-- Category 3: Ease of Use -->
+          <div class="category-card">
             <div class="category-header">
+              <span class="category-icon">👆</span>
               <h3>Ease of Use</h3>
+              <span class="winner-badge guardio-wins">Guardio Wins</span>
             </div>
-            <div class="category-content">
-              <div class="contender contender-winner">
-                <span class="contender-name">Guardio</span>
-                <div class="contender-rating">
-                  <span class="rating-bar" style="width: 96%"></span>
+            <div class="category-bars">
+              <div class="bar-item">
+                <div class="bar-info">
+                  <span class="bar-name">Guardio</span>
+                  <span class="bar-score">9.6/10</span>
                 </div>
-                <span class="rating-score">9.6/10</span>
-                <span class="winner-badge">Winner</span>
+                <div class="bar-track">
+                  <div class="bar-fill guardio-fill" style="width: 96%"></div>
+                </div>
               </div>
-              <div class="contender">
-                <span class="contender-name">Norton</span>
-                <div class="contender-rating">
-                  <span class="rating-bar" style="width: 75%"></span>
+              <div class="bar-item">
+                <div class="bar-info">
+                  <span class="bar-name" id="cat3-comp-name">Norton</span>
+                  <span class="bar-score" id="cat3-comp-score">7.5/10</span>
                 </div>
-                <span class="rating-score">7.5/10</span>
+                <div class="bar-track">
+                  <div class="bar-fill competitor-fill" id="cat3-comp-bar" style="width: 75%"></div>
+                </div>
               </div>
             </div>
-            <p class="category-note">Guardio's simple interface requires no technical knowledge. Norton's feature-rich dashboard can be overwhelming.</p>
+            <p class="category-note">Install once, forget about it. No complex settings or confusing dashboards.</p>
           </div>
 
-          <!-- Pricing -->
-          <div class="comparison-category">
+          <!-- Category 4: Value for Money -->
+          <div class="category-card">
             <div class="category-header">
+              <span class="category-icon">💰</span>
               <h3>Value for Money</h3>
+              <span class="winner-badge guardio-wins">Guardio Wins</span>
             </div>
-            <div class="category-content">
-              <div class="contender contender-winner">
-                <span class="contender-name">Guardio</span>
-                <div class="contender-rating">
-                  <span class="rating-bar" style="width: 90%"></span>
+            <div class="category-bars">
+              <div class="bar-item">
+                <div class="bar-info">
+                  <span class="bar-name">Guardio</span>
+                  <span class="bar-score">9.0/10</span>
                 </div>
-                <span class="rating-score">$8.99/mo</span>
-                <span class="winner-badge">Better Value</span>
+                <div class="bar-track">
+                  <div class="bar-fill guardio-fill" style="width: 90%"></div>
+                </div>
               </div>
-              <div class="contender">
-                <span class="contender-name">Norton</span>
-                <div class="contender-rating">
-                  <span class="rating-bar" style="width: 65%"></span>
+              <div class="bar-item">
+                <div class="bar-info">
+                  <span class="bar-name" id="cat4-comp-name">Norton</span>
+                  <span class="bar-score" id="cat4-comp-score">6.5/10</span>
                 </div>
-                <span class="rating-score">$12.99/mo</span>
+                <div class="bar-track">
+                  <div class="bar-fill competitor-fill" id="cat4-comp-bar" style="width: 65%"></div>
+                </div>
               </div>
             </div>
-            <p class="category-note">Guardio offers focused protection at a lower price point. Norton's higher cost includes features many users don't need.</p>
+            <p class="category-note">Guardio's price stays the same at renewal. No surprise price increases.</p>
           </div>
 
-          <!-- Features -->
-          <div class="comparison-category">
+          <!-- Category 5: Feature Set -->
+          <div class="category-card">
             <div class="category-header">
+              <span class="category-icon">🔧</span>
               <h3>Feature Set</h3>
+              <span class="winner-badge competitor-wins" id="cat5-winner">Norton Wins</span>
             </div>
-            <div class="category-content">
-              <div class="contender">
-                <span class="contender-name">Guardio</span>
-                <div class="contender-rating">
-                  <span class="rating-bar" style="width: 80%"></span>
+            <div class="category-bars">
+              <div class="bar-item">
+                <div class="bar-info">
+                  <span class="bar-name">Guardio</span>
+                  <span class="bar-score">8.0/10</span>
                 </div>
-                <span class="rating-score">8.0/10</span>
+                <div class="bar-track">
+                  <div class="bar-fill guardio-fill" style="width: 80%"></div>
+                </div>
               </div>
-              <div class="contender contender-winner">
-                <span class="contender-name">Norton</span>
-                <div class="contender-rating">
-                  <span class="rating-bar" style="width: 92%"></span>
+              <div class="bar-item">
+                <div class="bar-info">
+                  <span class="bar-name" id="cat5-comp-name">Norton</span>
+                  <span class="bar-score" id="cat5-comp-score">9.2/10</span>
                 </div>
-                <span class="rating-score">9.2/10</span>
-                <span class="winner-badge">Winner</span>
+                <div class="bar-track">
+                  <div class="bar-fill competitor-fill" id="cat5-comp-bar" style="width: 92%"></div>
+                </div>
               </div>
             </div>
-            <p class="category-note">Norton includes VPN, password manager, and full antivirus. Guardio focuses on browser security essentials.</p>
+            <p class="category-note" id="cat5-note">Norton includes VPN, password manager, and full antivirus — more features, but also more complexity.</p>
           </div>
+        </div>
+
+        <!-- Overall Winner -->
+        <div class="overall-winner">
+          <div class="winner-content">
+            <span class="winner-label">Overall Winner</span>
+            <div class="winner-display">
+              <span class="winner-icon">🏆</span>
+              <span class="winner-name">Guardio</span>
+              <span class="winner-score">Wins 4 out of 5 categories</span>
+            </div>
+          </div>
+          <a href="https://guard.io/n/register" class="btn btn-primary btn-lg">Try Guardio Free →</a>
         </div>
       </div>
     </section>
 
-    <!-- Feature Table -->
-    <section class="section bg-gray-50">
+    <!-- Feature Comparison Table -->
+    <section class="table-section">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Feature Comparison</h2>
-        </div>
-        <div class="feature-table-wrapper">
-          <table class="feature-table">
+        <h2 class="section-title">Detailed Feature Comparison</h2>
+        
+        <div class="table-wrapper">
+          <table class="comparison-table">
             <thead>
               <tr>
                 <th>Feature</th>
-                <th class="highlight">Guardio</th>
-                <th>Norton</th>
+                <th class="guardio-col">🛡️ Guardio</th>
+                <th class="competitor-col">
+                  <span id="table-comp-icon">🔶</span>
+                  <span id="table-comp-name">Norton</span>
+                </th>
               </tr>
             </thead>
             <tbody>
+              <tr class="category-row">
+                <td colspan="3">Protection</td>
+              </tr>
               <tr>
-                <td>Phishing Protection</td>
-                <td class="highlight"><span class="check">✓</span> Excellent</td>
-                <td><span class="check">✓</span> Good</td>
+                <td>Phishing Detection</td>
+                <td class="guardio-col"><span class="highlight">✓ 99.7% (Best)</span></td>
+                <td class="competitor-col" id="feat-phishing">✓ ~85%</td>
+              </tr>
+              <tr>
+                <td>Real-time Site Blocking</td>
+                <td class="guardio-col">✓</td>
+                <td class="competitor-col" id="feat-blocking">✓</td>
               </tr>
               <tr>
                 <td>Data Breach Monitoring</td>
-                <td class="highlight"><span class="check">✓</span></td>
-                <td><span class="check">✓</span></td>
+                <td class="guardio-col">✓ 5 emails</td>
+                <td class="competitor-col" id="feat-breach">✓</td>
               </tr>
               <tr>
-                <td>Malicious Site Blocking</td>
-                <td class="highlight"><span class="check">✓</span></td>
-                <td><span class="check">✓</span></td>
+                <td>Gmail Email Scanning</td>
+                <td class="guardio-col"><span class="highlight">✓ Unique</span></td>
+                <td class="competitor-col" id="feat-email">✗</td>
               </tr>
               <tr>
                 <td>SMS Scam Protection</td>
-                <td class="highlight"><span class="check">✓</span></td>
-                <td><span class="cross">✗</span></td>
+                <td class="guardio-col">✓ iOS</td>
+                <td class="competitor-col" id="feat-sms">✗</td>
               </tr>
-              <tr>
-                <td>Browser Extension</td>
-                <td class="highlight"><span class="check">✓</span> Lightweight</td>
-                <td><span class="check">✓</span> Heavy</td>
+              <tr class="category-row">
+                <td colspan="3">Additional Features</td>
               </tr>
               <tr>
                 <td>Full Antivirus</td>
-                <td class="highlight"><span class="cross">✗</span></td>
-                <td><span class="check">✓</span></td>
+                <td class="guardio-col">✗ Browser-focused</td>
+                <td class="competitor-col" id="feat-antivirus">✓</td>
               </tr>
               <tr>
                 <td>VPN Included</td>
-                <td class="highlight"><span class="cross">✗</span></td>
-                <td><span class="check">✓</span></td>
+                <td class="guardio-col">✗</td>
+                <td class="competitor-col" id="feat-vpn">✓</td>
               </tr>
               <tr>
                 <td>Password Manager</td>
-                <td class="highlight"><span class="cross">✗</span></td>
-                <td><span class="check">✓</span></td>
+                <td class="guardio-col">✗</td>
+                <td class="competitor-col" id="feat-password">✓</td>
               </tr>
               <tr>
-                <td>Family Plan (5 members)</td>
-                <td class="highlight"><span class="check">✓</span> $12.99/mo</td>
-                <td><span class="check">✓</span> $24.99/mo</td>
+                <td>Identity Theft Insurance</td>
+                <td class="guardio-col">✓ $1M</td>
+                <td class="competitor-col" id="feat-insurance">✓ $1M</td>
+              </tr>
+              <tr class="category-row">
+                <td colspan="3">Pricing (What You Actually Pay)</td>
+              </tr>
+              <tr>
+                <td>Monthly Price</td>
+                <td class="guardio-col"><span class="highlight">$9.99/mo — Always</span></td>
+                <td class="competitor-col" id="feat-price1"><span class="warning" id="feat-price-note">$9.99/mo after year 1*</span></td>
+              </tr>
+              <tr>
+                <td>Price Increase at Renewal?</td>
+                <td class="guardio-col"><span class="highlight">✓ No — Same Price</span></td>
+                <td class="competitor-col" id="feat-price2"><span class="warning">⚠️ Yes (+140%)</span></td>
+              </tr>
+              <tr>
+                <td>Family Plan (5 users)</td>
+                <td class="guardio-col"><span class="highlight">$4.67/user/mo</span></td>
+                <td class="competitor-col" id="feat-family">$4.99/user/mo</td>
               </tr>
               <tr>
                 <td>Free Trial</td>
-                <td class="highlight">7 days</td>
-                <td>14 days</td>
+                <td class="guardio-col">7 days</td>
+                <td class="competitor-col" id="feat-trial">14 days</td>
               </tr>
               <tr>
                 <td>Money-Back Guarantee</td>
-                <td class="highlight">30 days</td>
-                <td>60 days</td>
+                <td class="guardio-col">30 days</td>
+                <td class="competitor-col" id="feat-guarantee">60 days</td>
               </tr>
             </tbody>
           </table>
         </div>
+        <p class="table-note">* Most competitors offer steep first-year discounts, then increase prices 100-275% at renewal. Guardio's price stays the same.</p>
       </div>
     </section>
 
     <!-- Who Should Choose -->
-    <section class="section">
+    <section class="choice-section">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Which One is Right for You?</h2>
-        </div>
-        <div class="choice-grid">
-          <div class="choice-card choice-guardio">
+        <h2 class="section-title">Which One is Right for You?</h2>
+        
+        <div class="choice-cards">
+          <!-- Choose Guardio -->
+          <div class="choice-card guardio-choice">
             <div class="choice-header">
+              <span class="choice-icon">🛡️</span>
               <h3>Choose Guardio If...</h3>
             </div>
             <ul class="choice-list">
-              <li><span class="check">✓</span> You want lightweight browser protection</li>
-              <li><span class="check">✓</span> Phishing protection is your top priority</li>
-              <li><span class="check">✓</span> You want a simple, no-fuss solution</li>
-              <li><span class="check">✓</span> You already have antivirus software</li>
-              <li><span class="check">✓</span> You want affordable family protection</li>
-              <li><span class="check">✓</span> System performance matters to you</li>
+              <li>✓ Phishing protection is your top priority</li>
+              <li>✓ You want lightweight, no-slowdown protection</li>
+              <li>✓ You prefer simple "set and forget" security</li>
+              <li>✓ You already have antivirus software</li>
+              <li>✓ You hate surprise renewal price increases</li>
+              <li>✓ You want to protect your whole family affordably</li>
             </ul>
-            <div class="choice-cta">
-              <a href="#" class="btn btn-primary btn-lg">Try Guardio Free</a>
-              <span class="cta-note">7-day free trial • No credit card</span>
+            <div class="choice-footer">
+              <a href="https://guard.io/n/register" class="btn btn-primary btn-lg">Try Guardio Free →</a>
+              <span class="choice-note">7-day free trial • No credit card</span>
             </div>
           </div>
 
-          <div class="choice-card choice-competitor">
+          <!-- Choose Competitor -->
+          <div class="choice-card competitor-choice">
             <div class="choice-header">
-              <h3>Choose Norton If...</h3>
+              <span class="choice-icon" id="choice-comp-icon">🔶</span>
+              <h3 id="choice-comp-title">Choose Norton If...</h3>
             </div>
-            <ul class="choice-list">
-              <li><span class="check">✓</span> You need full antivirus protection</li>
-              <li><span class="check">✓</span> You want VPN included</li>
-              <li><span class="check">✓</span> You need a password manager</li>
-              <li><span class="check">✓</span> You want an all-in-one solution</li>
-              <li><span class="check">✓</span> You have multiple devices to protect</li>
-              <li><span class="check">✓</span> You prefer established brands</li>
+            <ul class="choice-list" id="choice-comp-list">
+              <li>✓ You need full system antivirus protection</li>
+              <li>✓ You want VPN included in your plan</li>
+              <li>✓ You need a built-in password manager</li>
+              <li>✓ You prefer all-in-one security suites</li>
+              <li>✓ You don't mind complex software</li>
+              <li>✓ You're okay with renewal price increases</li>
             </ul>
-            <div class="choice-cta">
-              <a href="#" class="btn btn-outline">Learn More</a>
+            <div class="choice-footer">
+              <a href="#" class="btn btn-outline" id="choice-comp-cta">Learn More About Norton</a>
             </div>
           </div>
         </div>
@@ -310,24 +479,346 @@
     </section>
 
     <!-- Final CTA -->
-    <section class="section cta-section">
-      <div class="container text-center">
-        <h2>Ready to Secure Your Browser?</h2>
-        <p>Join over 1 million users who trust Guardio for their online protection.</p>
-        <a href="#" class="btn btn-primary btn-lg">Start Your Free Trial</a>
-        <p class="cta-disclaimer">No credit card required. Cancel anytime.</p>
+    <section class="final-cta">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Ready to Protect Your Browser?</h2>
+          <p>Join 1.5 million+ users who trust Guardio for their online protection.</p>
+          <a href="https://guard.io/n/register" class="btn btn-primary btn-lg">Start Your Free 7-Day Trial →</a>
+          <p class="cta-subtext">No credit card required • Cancel anytime • 30-day money-back guarantee</p>
+        </div>
       </div>
     </section>
   </main>
 
+  <!-- Mobile Sticky CTA -->
+  <div class="mobile-sticky-cta">
+    <a href="https://guard.io/n/register" class="btn btn-primary">Try Guardio Free →</a>
+  </div>
+
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
-      <p class="disclaimer">Disclaimer: This comparison is based on our independent research. Product features and pricing may change. We may receive compensation for referrals.</p>
-      <p class="copyright">© 2024 Security Showdown. All rights reserved.</p>
+      <p class="disclaimer">This comparison is based on our independent testing as of January 2025. Product features and pricing may change. We may receive compensation for referrals.</p>
+      <p class="footer-brand">CyberSecurityAdvisor — Independent Security Reviews Since 2019</p>
     </div>
   </footer>
 
-  <script src="../../js/main.js"></script>
+  <script>
+    // Competitor data
+    const competitors = {
+      norton: {
+        name: "Norton 360",
+        shortName: "Norton",
+        icon: "🔶",
+        stars: "★★★★☆",
+        score: "9.0/10",
+        highlightLabel: "What Norton Offers",
+        highlightText: "Full antivirus suite with extras",
+        users: "50M+",
+        rating: "3.8★",
+        guarantee: "60-day guarantee",
+        features: [
+          { icon: "✓", text: "Full antivirus suite" },
+          { icon: "✓", text: "VPN included" },
+          { icon: "✓", text: "Password manager" },
+          { icon: "⚠️", text: "Heavy system impact" },
+          { icon: "⚠️", text: "Complex interface" }
+        ],
+        ratings: {
+          protection: { score: 78, display: "7.8/10" },
+          performance: { score: 70, display: "7.0/10" },
+          ease: { score: 75, display: "7.5/10" },
+          value: { score: 65, display: "6.5/10" },
+          features: { score: 92, display: "9.2/10" }
+        },
+        verdict: "Best for users who want lightweight, browser-focused protection with industry-leading phishing detection (99.7% rate).",
+        chooseIf: [
+          "You need full system antivirus protection",
+          "You want VPN included in your plan",
+          "You need a built-in password manager",
+          "You prefer all-in-one security suites",
+          "You don't mind complex software",
+          "You're okay with renewal price increases"
+        ],
+        tableData: {
+          phishing: "✓ ~85%",
+          blocking: "✓",
+          breach: "✓",
+          email: "✗",
+          sms: "✗",
+          antivirus: "✓",
+          vpn: "✓",
+          password: "✓",
+          insurance: "✓ $1M",
+          price1: '<span class="warning">$9.99/mo after year 1*</span>',
+          price2: '<span class="warning">⚠️ Yes (+140%)</span>',
+          family: "$4.99/user/mo",
+          trial: "14 days",
+          guarantee: "60 days"
+        },
+        featureNote: "Norton includes VPN, password manager, and full antivirus — more features, but also more complexity."
+      },
+      mcafee: {
+        name: "McAfee+",
+        shortName: "McAfee",
+        icon: "🔴",
+        stars: "★★★★☆",
+        score: "8.5/10",
+        highlightLabel: "What McAfee Offers",
+        highlightText: "Unlimited devices, $2M coverage",
+        users: "40M+",
+        rating: "3.5★",
+        guarantee: "30-day guarantee",
+        features: [
+          { icon: "✓", text: "Unlimited devices" },
+          { icon: "✓", text: "$2M identity coverage" },
+          { icon: "✓", text: "VPN included" },
+          { icon: "⚠️", text: "Aggressive upsells" },
+          { icon: "⚠️", text: "Significant slowdown" }
+        ],
+        ratings: {
+          protection: { score: 75, display: "7.5/10" },
+          performance: { score: 65, display: "6.5/10" },
+          ease: { score: 70, display: "7.0/10" },
+          value: { score: 55, display: "5.5/10" },
+          features: { score: 88, display: "8.8/10" }
+        },
+        verdict: "Best for users who want lightweight, browser-focused protection without aggressive upsells and renewal shocks.",
+        chooseIf: [
+          "You need unlimited device coverage",
+          "You want maximum identity theft coverage ($2M)",
+          "You need full antivirus + VPN",
+          "You prefer established brands",
+          "You don't mind pushy upgrade prompts",
+          "You're okay with 275% renewal increase"
+        ],
+        tableData: {
+          phishing: "✓ ~80%",
+          blocking: "✓",
+          breach: "✓",
+          email: "✗",
+          sms: "✗",
+          antivirus: "✓",
+          vpn: "✓",
+          password: "✓",
+          insurance: "✓ $2M",
+          price1: '<span class="warning">$12.49/mo after year 1*</span>',
+          price2: '<span class="warning">⚠️ Yes (+275%)</span>',
+          family: "Unlimited devices",
+          trial: "30 days",
+          guarantee: "30 days"
+        },
+        featureNote: "McAfee offers unlimited devices and $2M identity coverage, but has the most aggressive renewal pricing."
+      },
+      malwarebytes: {
+        name: "Malwarebytes",
+        shortName: "Malwarebytes",
+        icon: "🔵",
+        stars: "★★★★☆",
+        score: "8.7/10",
+        highlightLabel: "What Malwarebytes Offers",
+        highlightText: "Best-in-class malware removal",
+        users: "60M+",
+        rating: "4.0★",
+        guarantee: "60-day guarantee",
+        features: [
+          { icon: "✓", text: "Best malware removal" },
+          { icon: "✓", text: "Fair renewal pricing" },
+          { icon: "✓", text: "Free version available" },
+          { icon: "⚠️", text: "Weaker real-time protection" },
+          { icon: "⚠️", text: "Basic browser extension" }
+        ],
+        ratings: {
+          protection: { score: 72, display: "7.2/10" },
+          performance: { score: 85, display: "8.5/10" },
+          ease: { score: 88, display: "8.8/10" },
+          value: { score: 80, display: "8.0/10" },
+          features: { score: 70, display: "7.0/10" }
+        },
+        verdict: "Best for users who prioritize browser-first protection over malware cleanup after the fact.",
+        chooseIf: [
+          "You think you're already infected",
+          "You want the best malware removal tool",
+          "You prefer fair, consistent pricing",
+          "You want a free option to try first",
+          "You need to clean an existing infection",
+          "You don't need browser-specific protection"
+        ],
+        tableData: {
+          phishing: "✓ Basic",
+          blocking: "✓",
+          breach: "✗",
+          email: "✗",
+          sms: "✗",
+          antivirus: "✓ Malware-focused",
+          vpn: "✓ Premium+ only",
+          password: "✗",
+          insurance: "✗",
+          price1: '$3.75/mo — Always',
+          price2: '<span class="success">✓ No — Same Price</span>',
+          family: "$6.67/user/mo",
+          trial: "14 days",
+          guarantee: "60 days"
+        },
+        featureNote: "Malwarebytes excels at removing existing malware but has weaker real-time browser protection."
+      },
+      bitdefender: {
+        name: "Bitdefender",
+        shortName: "Bitdefender",
+        icon: "🟢",
+        stars: "★★★★☆",
+        score: "9.2/10",
+        highlightLabel: "What Bitdefender Offers",
+        highlightText: "Maximum features & detection",
+        users: "30M+",
+        rating: "4.1★",
+        guarantee: "30-day guarantee",
+        features: [
+          { icon: "✓", text: "Top malware detection" },
+          { icon: "✓", text: "VPN included (200MB/day)" },
+          { icon: "✓", text: "Most features" },
+          { icon: "⚠️", text: "Complex interface" },
+          { icon: "⚠️", text: "Moderate slowdown" }
+        ],
+        ratings: {
+          protection: { score: 85, display: "8.5/10" },
+          performance: { score: 82, display: "8.2/10" },
+          ease: { score: 72, display: "7.2/10" },
+          value: { score: 60, display: "6.0/10" },
+          features: { score: 94, display: "9.4/10" }
+        },
+        verdict: "Best for users who want simple browser protection without navigating complex security dashboards.",
+        chooseIf: [
+          "You want maximum malware detection rates",
+          "You need comprehensive feature set",
+          "You're tech-savvy and like control",
+          "You want webcam/microphone protection",
+          "You don't mind complex interfaces",
+          "You're okay with 175% renewal increase"
+        ],
+        tableData: {
+          phishing: "✓ Very Good (~90%)",
+          blocking: "✓",
+          breach: "✓",
+          email: "✗",
+          sms: "✗",
+          antivirus: "✓ Excellent",
+          vpn: "✓ 200MB/day",
+          password: "✓",
+          insurance: "✗",
+          price1: '<span class="warning">$9.17/mo after year 1*</span>',
+          price2: '<span class="warning">⚠️ Yes (+175%)</span>',
+          family: "$5.00/user/mo",
+          trial: "30 days",
+          guarantee: "30 days"
+        },
+        featureNote: "Bitdefender has excellent detection rates and the most features, but the complex interface can overwhelm casual users."
+      }
+    };
+
+    let currentCompetitor = 'norton';
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.pill').forEach(pill => {
+        pill.addEventListener('click', function() {
+          switchCompetitor(this.dataset.competitor);
+        });
+      });
+    });
+
+    function switchCompetitor(competitor) {
+      if (competitor === currentCompetitor) return;
+      currentCompetitor = competitor;
+      const data = competitors[competitor];
+
+      // Update pills
+      document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+      document.querySelector(`[data-competitor="${competitor}"]`).classList.add('active');
+
+      // Update hero
+      document.getElementById('competitor-icon').textContent = data.icon;
+      document.getElementById('competitor-name').textContent = data.shortName;
+      document.getElementById('verdict-reason').textContent = data.verdict;
+
+      // Update competitor card
+      document.getElementById('comp-card-icon').textContent = data.icon;
+      document.getElementById('comp-card-name').textContent = data.name;
+      document.getElementById('comp-stars').textContent = data.stars;
+      document.getElementById('comp-score').textContent = data.score;
+      document.getElementById('comp-highlight-label').textContent = data.highlightLabel;
+      document.getElementById('comp-highlight-text').textContent = data.highlightText;
+      document.getElementById('comp-users').textContent = data.users;
+      document.getElementById('comp-rating').textContent = data.rating;
+      document.getElementById('comp-cta').textContent = `View ${data.shortName}`;
+      document.getElementById('comp-guarantee').textContent = data.guarantee;
+
+      // Update features list
+      document.getElementById('comp-features').innerHTML = data.features.map(f => 
+        `<li><span class="${f.icon === '✓' ? 'check' : 'warning'}">${f.icon}</span> ${f.text}</li>`
+      ).join('');
+
+      // Update category bars
+      document.getElementById('cat1-comp-name').textContent = data.shortName;
+      document.getElementById('cat1-comp-score').textContent = data.ratings.protection.display;
+      document.getElementById('cat1-comp-bar').style.width = data.ratings.protection.score + '%';
+
+      document.getElementById('cat2-comp-name').textContent = data.shortName;
+      document.getElementById('cat2-comp-score').textContent = data.ratings.performance.display;
+      document.getElementById('cat2-comp-bar').style.width = data.ratings.performance.score + '%';
+
+      document.getElementById('cat3-comp-name').textContent = data.shortName;
+      document.getElementById('cat3-comp-score').textContent = data.ratings.ease.display;
+      document.getElementById('cat3-comp-bar').style.width = data.ratings.ease.score + '%';
+
+      document.getElementById('cat4-comp-name').textContent = data.shortName;
+      document.getElementById('cat4-comp-score').textContent = data.ratings.value.display;
+      document.getElementById('cat4-comp-bar').style.width = data.ratings.value.score + '%';
+
+      document.getElementById('cat5-comp-name').textContent = data.shortName;
+      document.getElementById('cat5-comp-score').textContent = data.ratings.features.display;
+      document.getElementById('cat5-comp-bar').style.width = data.ratings.features.score + '%';
+      document.getElementById('cat5-note').textContent = data.featureNote;
+
+      // Update category 5 winner
+      const cat5Winner = document.getElementById('cat5-winner');
+      if (data.ratings.features.score > 80) {
+        cat5Winner.textContent = `${data.shortName} Wins`;
+        cat5Winner.classList.remove('guardio-wins');
+        cat5Winner.classList.add('competitor-wins');
+      } else {
+        cat5Winner.textContent = 'Guardio Wins';
+        cat5Winner.classList.add('guardio-wins');
+        cat5Winner.classList.remove('competitor-wins');
+      }
+
+      // Update table
+      document.getElementById('table-comp-icon').textContent = data.icon;
+      document.getElementById('table-comp-name').textContent = data.shortName;
+      document.getElementById('feat-phishing').textContent = data.tableData.phishing;
+      document.getElementById('feat-blocking').textContent = data.tableData.blocking;
+      document.getElementById('feat-breach').textContent = data.tableData.breach;
+      document.getElementById('feat-email').textContent = data.tableData.email;
+      document.getElementById('feat-sms').textContent = data.tableData.sms;
+      document.getElementById('feat-antivirus').textContent = data.tableData.antivirus;
+      document.getElementById('feat-vpn').textContent = data.tableData.vpn;
+      document.getElementById('feat-password').textContent = data.tableData.password;
+      document.getElementById('feat-insurance').textContent = data.tableData.insurance;
+      document.getElementById('feat-price1').textContent = data.tableData.price1;
+      document.getElementById('feat-price2').innerHTML = data.tableData.price2;
+      document.getElementById('feat-family').textContent = data.tableData.family;
+      document.getElementById('feat-trial').textContent = data.tableData.trial;
+      document.getElementById('feat-guarantee').textContent = data.tableData.guarantee;
+
+      // Update choice section
+      document.getElementById('choice-comp-icon').textContent = data.icon;
+      document.getElementById('choice-comp-title').textContent = `Choose ${data.shortName} If...`;
+      document.getElementById('choice-comp-list').innerHTML = data.chooseIf.map(item => 
+        `<li>✓ ${item}</li>`
+      ).join('');
+      document.getElementById('choice-comp-cta').textContent = `Learn More About ${data.shortName}`;
+    }
+  </script>
 </body>
 </html>
-

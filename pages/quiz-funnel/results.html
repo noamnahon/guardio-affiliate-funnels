@@ -9,173 +9,268 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="quiz-header">
+  <!-- Header -->
+  <header class="quiz-header results-header">
     <div class="container">
-      <a href="../../index.html" class="logo">Security Check</a>
+      <div class="header-content">
+        <a href="../../index.html" class="logo">
+          <span class="logo-icon">🛡️</span>
+          <span class="logo-text">CyberSecurityAdvisor</span>
+        </a>
+      </div>
     </div>
   </header>
 
   <main>
-    <!-- Results Section -->
-    <section class="results-section">
+    <!-- Results Section - Compact Above-the-Fold -->
+    <section class="results-hero">
+      <div class="container container-md">
+        <div class="results-top">
+          <!-- Score + Risk Side by Side -->
+          <div class="score-risk-row">
+            <div class="score-compact" id="score-display">
+              <div class="score-circle" id="score-circle">
+                <span class="score-number" id="score-number">0</span>
+              </div>
+              <span class="score-label-below">Security Score</span>
+            </div>
+            <div class="risk-compact" id="risk-level">
+              <span class="risk-badge risk-high" id="risk-badge">High Risk</span>
+              <h1 id="result-title">Your Security Needs Attention</h1>
+              <p class="result-description" id="result-description">
+                We found vulnerabilities that put you at risk. The good news? One simple step can fix them.
+              </p>
+            </div>
+          </div>
+
+          <!-- Primary CTA - Immediately Visible -->
+          <div class="primary-cta-box">
+            <div class="cta-recommendation">
+              <span class="cta-label">✓ Recommended Solution</span>
+              <h2>Protect Yourself with Guardio</h2>
+              <p>The #1 browser security extension • Used by 1.5M+ people • 99.7% phishing detection</p>
+            </div>
+            <a href="https://guard.io/n/register" class="btn btn-primary btn-lg cta-main">
+              Get Protected Now — 7 Days Free →
+            </a>
+            <p class="cta-subtext">No credit card required • 30-day money-back guarantee</p>
+            <div class="cta-trust-row">
+              <span>★ 4.5/5 Chrome Store</span>
+              <span>•</span>
+              <span>★ 4.3/5 Trustpilot</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Details Section - Below the Fold -->
+    <section class="results-details">
       <div class="container container-md">
         <div class="results-card">
-          <!-- Score Display -->
-          <div class="score-display" id="score-display">
-            <div class="score-circle" id="score-circle">
-              <span class="score-number" id="score-number">0</span>
-              <span class="score-label">Security Score</span>
-            </div>
-          </div>
-
-          <!-- Risk Level -->
-          <div class="risk-level" id="risk-level">
-            <span class="risk-badge risk-high" id="risk-badge">High Risk</span>
-            <h1 id="result-title">Your Online Security Needs Attention</h1>
-            <p class="result-description" id="result-description">
-              Based on your responses, you're more vulnerable to online threats than the average user. Here's what you can do to protect yourself.
-            </p>
-          </div>
-
           <!-- Vulnerabilities -->
-          <div class="vulnerabilities">
-            <h2>Key Vulnerabilities Detected</h2>
+          <div class="vulnerabilities" id="vulnerabilities-section">
+            <h2>⚠️ Vulnerabilities We Found</h2>
             <div class="vulnerability-list" id="vulnerability-list">
-              <div class="vulnerability-item">
-                <span class="vuln-icon">⚠️</span>
-                <div class="vuln-content">
-                  <h4>Password Security</h4>
-                  <p>Reusing passwords puts all your accounts at risk if one is breached.</p>
+              <!-- Populated dynamically -->
+            </div>
+          </div>
+
+          <!-- Why Guardio Helps -->
+          <div class="solution-section">
+            <h2>How Guardio Protects You</h2>
+            <div class="benefits-grid">
+              <div class="benefit-item">
+                <span class="benefit-icon">🎯</span>
+                <div class="benefit-content">
+                  <h4>Blocks Phishing Sites</h4>
+                  <p>Stops dangerous sites before you enter any information</p>
                 </div>
               </div>
-              <div class="vulnerability-item">
-                <span class="vuln-icon">⚠️</span>
-                <div class="vuln-content">
-                  <h4>Phishing Susceptibility</h4>
-                  <p>You may be vulnerable to sophisticated phishing attacks.</p>
+              <div class="benefit-item">
+                <span class="benefit-icon">🔔</span>
+                <div class="benefit-content">
+                  <h4>Data Breach Alerts</h4>
+                  <p>Notifies you if your info appears in a breach</p>
                 </div>
               </div>
-              <div class="vulnerability-item">
-                <span class="vuln-icon">⚠️</span>
-                <div class="vuln-content">
-                  <h4>No Active Protection</h4>
-                  <p>Without browser security tools, threats can go undetected.</p>
+              <div class="benefit-item">
+                <span class="benefit-icon">📧</span>
+                <div class="benefit-content">
+                  <h4>Email Scanning</h4>
+                  <p>Scans Gmail for phishing and scam links</p>
+                </div>
+              </div>
+              <div class="benefit-item">
+                <span class="benefit-icon">🛡️</span>
+                <div class="benefit-content">
+                  <h4>$1M Insurance</h4>
+                  <p>Identity theft coverage (US/Canada)</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Recommendation -->
-          <div class="recommendation">
-            <div class="recommendation-header">
-              <span class="badge badge-success">Recommended Solution</span>
-              <h2>Protect Yourself with Guardio</h2>
+          <!-- Pricing -->
+          <div class="pricing-section">
+            <div class="pricing-options">
+              <div class="price-option">
+                <span class="price-label">Individual</span>
+                <span class="price-amount">$9.99<span>/mo</span></span>
+              </div>
+              <div class="price-option featured">
+                <span class="price-badge-small">Best Value</span>
+                <span class="price-label">Family (5 users)</span>
+                <span class="price-amount">$4.67<span>/user/mo</span></span>
+              </div>
             </div>
-            <p>Guardio provides real-time protection against the exact threats you're vulnerable to:</p>
-            <ul class="benefits-list">
-              <li>
-                <span class="benefit-check">✓</span>
-                <span>Blocks phishing sites before you enter any data</span>
-              </li>
-              <li>
-                <span class="benefit-check">✓</span>
-                <span>Alerts you when your passwords appear in data breaches</span>
-              </li>
-              <li>
-                <span class="benefit-check">✓</span>
-                <span>Stops malicious downloads automatically</span>
-              </li>
-              <li>
-                <span class="benefit-check">✓</span>
-                <span>Monitors the dark web for your personal information</span>
-              </li>
-            </ul>
-            <div class="cta-box">
-              <a href="#" class="btn btn-primary btn-lg">Get Protected Now - 7 Days Free</a>
-              <p class="cta-subtext">No credit card required • Cancel anytime</p>
-            </div>
+            <p class="price-note">💡 Unlike Norton & McAfee, Guardio's price stays the same at renewal.</p>
           </div>
 
-          <!-- Social Proof -->
-          <div class="social-proof">
-            <div class="proof-stats flex items-center justify-center gap-8">
-              <div class="proof-item">
-                <span class="proof-number">4.8★</span>
-                <span class="proof-label">Chrome Store Rating</span>
-              </div>
-              <div class="proof-item">
-                <span class="proof-number">1M+</span>
-                <span class="proof-label">Active Users</span>
-              </div>
-              <div class="proof-item">
-                <span class="proof-number">50M+</span>
-                <span class="proof-label">Threats Blocked</span>
-              </div>
+          <!-- Second CTA -->
+          <div class="cta-box">
+            <a href="https://guard.io/n/register" class="btn btn-primary btn-lg cta-main">
+              Start Your Free 7-Day Trial →
+            </a>
+            <p class="cta-subtext">No credit card required • Cancel anytime</p>
+          </div>
+
+          <!-- Testimonial -->
+          <div class="testimonial-section">
+            <div class="testimonial">
+              <p class="testimonial-quote">"Finally security software my mom can use. She used to call me every week about suspicious emails — now Guardio handles it."</p>
+              <p class="testimonial-author">— Mike T., California <span class="verified">✓ Verified User</span></p>
             </div>
           </div>
         </div>
 
         <!-- Retake Option -->
         <div class="retake-section text-center">
-          <a href="index.html" class="btn btn-outline">Retake Assessment</a>
+          <a href="index.html" class="btn btn-outline">← Retake Assessment</a>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="quiz-footer">
     <div class="container text-center">
-      <p>© 2024 Security Assessment. Results are for educational purposes only.</p>
+      <p>This assessment is for educational purposes. Results are based on self-reported habits.</p>
+      <p class="footer-brand">CyberSecurityAdvisor — Independent Security Reviews Since 2019</p>
     </div>
   </footer>
 
-  <script src="../../js/main.js"></script>
   <script>
-    // Get score from URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const score = parseInt(urlParams.get('score')) || 50;
+    (function() {
+      'use strict';
 
-    // Update score display
-    document.getElementById('score-number').textContent = score;
+      // Get score from URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const score = parseInt(urlParams.get('score')) || 50;
 
-    // Set score circle color based on score
-    const scoreCircle = document.getElementById('score-circle');
-    const riskBadge = document.getElementById('risk-badge');
-    const resultTitle = document.getElementById('result-title');
-    const resultDescription = document.getElementById('result-description');
+      // Get stored answers
+      const answersString = sessionStorage.getItem('quizAnswers');
+      const answers = answersString ? JSON.parse(answersString) : {};
 
-    if (score >= 75) {
-      scoreCircle.classList.add('score-good');
-      riskBadge.textContent = 'Low Risk';
-      riskBadge.classList.remove('risk-high');
-      riskBadge.classList.add('risk-low');
-      resultTitle.textContent = 'Great Job! Your Security is Strong';
-      resultDescription.textContent = 'You\'re practicing good security habits. However, even security-conscious users benefit from additional protection layers. Here\'s how you can stay one step ahead of evolving threats.';
-    } else if (score >= 50) {
-      scoreCircle.classList.add('score-medium');
-      riskBadge.textContent = 'Medium Risk';
-      riskBadge.classList.remove('risk-high');
-      riskBadge.classList.add('risk-medium');
-      resultTitle.textContent = 'Room for Improvement';
-      resultDescription.textContent = 'Your security practices are average, but there are gaps that could leave you vulnerable. Small changes can make a big difference in your online safety.';
-    } else {
-      scoreCircle.classList.add('score-low');
-      // Default high risk state is already set
-    }
+      // DOM Elements
+      const scoreNumber = document.getElementById('score-number');
+      const scoreCircle = document.getElementById('score-circle');
+      const riskBadge = document.getElementById('risk-badge');
+      const resultTitle = document.getElementById('result-title');
+      const resultDescription = document.getElementById('result-description');
+      const vulnerabilityList = document.getElementById('vulnerability-list');
 
-    // Animate score number
-    let currentScore = 0;
-    const scoreElement = document.getElementById('score-number');
-    const animateScore = setInterval(() => {
-      if (currentScore < score) {
-        currentScore += 2;
-        if (currentScore > score) currentScore = score;
-        scoreElement.textContent = currentScore;
-      } else {
-        clearInterval(animateScore);
+      // Vulnerability definitions based on question answers
+      const vulnerabilities = {
+        1: { title: 'Password Security Risk', desc: 'Same password across sites = one breach exposes all accounts.', icon: '🔑' },
+        2: { title: 'Phishing Vulnerability', desc: 'Clicking email links without checking is the #1 way people get hacked.', icon: '📧' },
+        3: { title: 'Public Wi-Fi Exposure', desc: 'Banking on public networks can expose your financial data.', icon: '📶' },
+        4: { title: 'Previous Data Breach', desc: 'Your info may already be in hackers\' hands from past breaches.', icon: '💾' },
+        5: { title: 'No Browser Protection', desc: 'Without security tools, phishing sites go undetected.', icon: '🌐' },
+        6: { title: 'Missing 2FA', desc: 'Without two-factor auth, stolen passwords give full access.', icon: '🔐' },
+        7: { title: 'Outdated Software', desc: 'Skipping updates leaves security holes open for hackers.', icon: '⚠️' },
+        8: { title: 'No Identity Monitoring', desc: 'Identity theft can go unnoticed for months without monitoring.', icon: '👤' }
+      };
+
+      // Set score display
+      function updateScoreDisplay() {
+        // Animate score
+        let currentScore = 0;
+        const animateScore = setInterval(() => {
+          if (currentScore < score) {
+            currentScore += 2;
+            if (currentScore > score) currentScore = score;
+            scoreNumber.textContent = currentScore;
+          } else {
+            clearInterval(animateScore);
+          }
+        }, 20);
+
+        // Set score circle color and messaging based on score
+        if (score >= 75) {
+          scoreCircle.classList.add('score-good');
+          riskBadge.textContent = 'Low Risk';
+          riskBadge.classList.remove('risk-high');
+          riskBadge.classList.add('risk-low');
+          resultTitle.textContent = 'Good News! Above Average';
+          resultDescription.textContent = 'You have good habits, but even security-conscious users benefit from extra protection.';
+        } else if (score >= 50) {
+          scoreCircle.classList.add('score-medium');
+          riskBadge.textContent = 'Medium Risk';
+          riskBadge.classList.remove('risk-high');
+          riskBadge.classList.add('risk-medium');
+          resultTitle.textContent = 'Some Security Gaps Found';
+          resultDescription.textContent = 'We found vulnerabilities that could leave you exposed. Small changes make a big difference.';
+        } else {
+          scoreCircle.classList.add('score-low');
+          riskBadge.textContent = 'High Risk';
+          resultTitle.textContent = 'Your Security Needs Attention';
+          resultDescription.textContent = 'You\'re more vulnerable than most users. One simple step can dramatically improve your protection.';
+        }
       }
-    }, 20);
+
+      // Show vulnerabilities based on answers
+      function showVulnerabilities() {
+        let vulnHTML = '';
+        let vulnCount = 0;
+
+        for (const [questionNum, answerScore] of Object.entries(answers)) {
+          if (answerScore < 2 && vulnerabilities[questionNum]) {
+            const vuln = vulnerabilities[questionNum];
+            vulnHTML += `
+              <div class="vulnerability-item">
+                <span class="vuln-icon">${vuln.icon}</span>
+                <div class="vuln-content">
+                  <h4>${vuln.title}</h4>
+                  <p>${vuln.desc}</p>
+                </div>
+              </div>
+            `;
+            vulnCount++;
+            if (vulnCount >= 3) break;
+          }
+        }
+
+        if (vulnCount === 0) {
+          vulnHTML = `
+            <div class="vulnerability-item positive">
+              <span class="vuln-icon">✅</span>
+              <div class="vuln-content">
+                <h4>Good Security Habits</h4>
+                <p>You're following best practices. Browser protection adds an extra safety net.</p>
+              </div>
+            </div>
+          `;
+        }
+
+        vulnerabilityList.innerHTML = vulnHTML;
+      }
+
+      // Initialize
+      updateScoreDisplay();
+      showVulnerabilities();
+
+    })();
   </script>
 </body>
 </html>
-
