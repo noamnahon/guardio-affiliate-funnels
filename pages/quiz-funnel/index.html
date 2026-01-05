@@ -29,67 +29,98 @@
         <div class="intro-content text-center">
           
           <!-- Browser Detection Alert -->
-          <div class="alert-box" id="browser-alert" style="display: none;">
+          <div class="alert-box" id="browser-alert">
             <span class="alert-icon">⚠️</span>
             <div>
-              <div class="alert-title">Browser Detected</div>
-              <div class="alert-detail" id="browser-info">We've detected your browser and device to personalize your assessment.</div>
+              <div class="alert-title">Security Check Available</div>
+              <div class="alert-detail" id="browser-info">We've detected you're using <strong id="detected-browser">Chrome</strong> on <strong id="detected-os">Windows</strong>. Let's check if you're protected.</div>
             </div>
           </div>
 
           <h1>Is Your Browser Really Protected?</h1>
           <p class="intro-subtitle">
-            Take our free 2-minute security assessment and discover your risk level
+            Take our free 2-minute security assessment. Answer 8 simple questions and discover your personal risk score.
           </p>
           
-          <div class="trust-signals">
-            <p class="trust-text">Featured in: <strong>PCMag</strong>, <strong>Forbes</strong>, <strong>TechRadar</strong></p>
+          <div class="intro-stats">
+            <div class="stat-item">
+              <span class="stat-number">3.4B</span>
+              <span class="stat-label">Phishing emails sent daily</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">$4.2B</span>
+              <span class="stat-label">Lost to scams in 2024</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">1 in 4</span>
+              <span class="stat-label">Americans targeted</span>
+            </div>
           </div>
 
-          <button class="btn btn-primary btn-lg" id="start-quiz-btn">
-            Start Free Assessment
+          <button class="btn btn-primary btn-lg start-btn" id="start-quiz-btn">
+            Start Free Assessment →
           </button>
           
-          <p class="intro-note">No email required • Takes 2 minutes • 100% free</p>
+          <p class="privacy-note">🔒 No email required • Takes 2 minutes • 100% free</p>
+
+          <div class="trust-row">
+            <span>Featured in:</span>
+            <span class="trust-logo">PCMag</span>
+            <span class="trust-logo">Forbes</span>
+            <span class="trust-logo">TechRadar</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Quiz Container (Hidden Initially) -->
-    <section class="quiz-container hidden" id="quiz-container">
+    <!-- Quiz Questions Screen (Hidden Initially) -->
+    <section class="quiz-container hidden" id="quiz-screen">
       <div class="container container-md">
         
         <!-- Progress Bar -->
-        <div class="quiz-progress">
+        <div class="progress-wrapper">
+          <div class="progress-info">
+            <span class="progress-text">Question <span id="current-q">1</span> of <span id="total-q">8</span></span>
+            <span class="progress-percent" id="progress-percent">0%</span>
+          </div>
           <div class="progress-bar">
-            <div class="progress-fill" id="progress-fill"></div>
-          </div>
-          <div class="progress-text">
-            <span id="progress-percent">0%</span> Complete • Question <span id="question-number">1</span> of <span id="total-questions">8</span>
-          </div>
-          <p class="nav-hint">Click an answer to continue</p>
-        </div>
-
-        <!-- Question Display -->
-        <div class="question-wrapper">
-          <div class="question-card" id="question-card">
-            <h2 class="question-text" id="question-text">Loading question...</h2>
-            <div class="answers-list" id="answers-list">
-              <!-- Answers will be inserted here -->
-            </div>
+            <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
           </div>
         </div>
 
-        <!-- Loading Screen (Hidden Initially) -->
-        <div class="loading-screen hidden" id="loading-screen">
-          <div class="loading-content">
-            <div class="loading-icon">🛡️</div>
-            <h2>Analyzing Your Responses...</h2>
-            <p>We're calculating your personalized security score</p>
-            <div class="loading-spinner"></div>
+        <!-- Question Card -->
+        <div class="question-card">
+          <div class="question-number" id="question-number">Question 1</div>
+          <div class="question">
+            <h2 id="question-text">Loading question...</h2>
+            <p class="question-context" id="question-context">Loading context...</p>
+          </div>
+          <div class="answers" id="answers-container">
+            <!-- Answers will be inserted here -->
+          </div>
+          <div class="quiz-nav">
+            <span class="nav-hint">Click an answer to continue</span>
           </div>
         </div>
 
+      </div>
+    </section>
+
+    <!-- Loading Screen (Hidden Initially) -->
+    <section class="quiz-loading hidden" id="loading-screen">
+      <div class="container container-md text-center">
+        <div class="loading-animation">
+          <div class="loading-spinner"></div>
+          <span class="loading-shield">🛡️</span>
+        </div>
+        <h2>Analyzing Your Responses...</h2>
+        <p class="loading-text">We're calculating your personalized security score</p>
+        <div class="loading-steps">
+          <div class="loading-step" id="step-1">✓ Analyzing password security...</div>
+          <div class="loading-step" id="step-2">✓ Checking phishing vulnerability...</div>
+          <div class="loading-step" id="step-3">✓ Evaluating data exposure risk...</div>
+          <div class="loading-step" id="step-4">✓ Generating recommendations...</div>
+        </div>
       </div>
     </section>
   </main>
@@ -106,70 +137,78 @@
     (function() {
       'use strict';
 
-      // Quiz Questions (optimized for 55+ audience)
+      // Quiz Questions with emojis and context
       const questions = [
         {
           question: "How many different passwords do you use across your online accounts?",
+          context: "💡 Did you know? 81% of data breaches are caused by weak or reused passwords. Using the same password everywhere means one breach exposes all your accounts.",
           answers: [
-            { text: "One password for everything", value: 0 },
-            { text: "2-3 passwords I rotate", value: 2 },
-            { text: "A different password for each account", value: 5 }
+            { text: "One password for everything", icon: "🔓", value: 0 },
+            { text: "2-3 passwords I rotate", icon: "🔑", value: 2 },
+            { text: "A different password for each account", icon: "🔐", value: 5 }
           ]
         },
         {
-          question: "When you get an email asking you to click a link, what do you usually do?",
+          question: "When you receive an email asking you to click a link, what do you usually do?",
+          context: "💡 Did you know? 91% of cyberattacks start with a phishing email. Scammers create emails that look identical to real ones from Amazon, banks, and Netflix.",
           answers: [
-            { text: "Click it if it looks legitimate", value: 0 },
-            { text: "Sometimes click, sometimes check first", value: 2 },
-            { text: "Always check the sender and URL first", value: 5 }
+            { text: "Click it if it looks legitimate", icon: "👆", value: 0 },
+            { text: "Sometimes click, sometimes check first", icon: "🤔", value: 2 },
+            { text: "Always verify the sender and URL first", icon: "🔍", value: 5 }
           ]
         },
         {
-          question: "Do you ever check your bank account or make purchases while on public Wi-Fi (coffee shops, airports)?",
+          question: "Do you ever access your bank account or make purchases on public Wi-Fi?",
+          context: "💡 Did you know? Hackers can intercept data on public Wi-Fi in coffee shops, airports, and hotels. Your banking info can be stolen in seconds.",
           answers: [
-            { text: "Yes, regularly", value: 0 },
-            { text: "Occasionally", value: 2 },
-            { text: "Never, I wait until I'm on secure Wi-Fi", value: 5 }
+            { text: "Yes, I do it regularly", icon: "📶", value: 0 },
+            { text: "Occasionally when I need to", icon: "⚡", value: 2 },
+            { text: "Never — I wait for secure Wi-Fi", icon: "🏠", value: 5 }
           ]
         },
         {
           question: "Have you ever checked if your email address was involved in a data breach?",
+          context: "💡 Did you know? Over 12 billion personal records have been exposed in data breaches. Your email has likely been leaked at least once.",
           answers: [
-            { text: "No, I don't know how", value: 0 },
-            { text: "I checked once, a while ago", value: 2 },
-            { text: "Yes, I check regularly", value: 5 }
+            { text: "No, I don't know how to check", icon: "❓", value: 0 },
+            { text: "I checked once, a while ago", icon: "📅", value: 2 },
+            { text: "Yes, I check regularly", icon: "✅", value: 5 }
           ]
         },
         {
-          question: "Do you have any browser security extensions or tools installed?",
+          question: "Do you have any browser security extensions or protection tools installed?",
+          context: "💡 Did you know? Chrome and Edge block some threats, but miss up to 40% of new phishing sites. Dedicated protection catches what browsers miss.",
           answers: [
-            { text: "No, I don't have anything", value: 0 },
-            { text: "I'm not sure, maybe?", value: 1 },
-            { text: "Yes, I have protection installed", value: 5 }
+            { text: "No, I don't have any protection", icon: "🚫", value: 0 },
+            { text: "I'm not sure what I have", icon: "🤷", value: 1 },
+            { text: "Yes, I have security tools installed", icon: "🛡️", value: 5 }
           ]
         },
         {
-          question: "How many of your important accounts (bank, email, social media) use two-factor authentication?",
+          question: "How many of your important accounts use two-factor authentication (2FA)?",
+          context: "💡 Did you know? 2FA blocks 99.9% of automated attacks. Without it, a stolen password gives hackers complete access to your account.",
           answers: [
-            { text: "None of them", value: 0 },
-            { text: "Some of them", value: 2 },
-            { text: "All of them", value: 5 }
+            { text: "None of them", icon: "😰", value: 0 },
+            { text: "Some of them", icon: "📱", value: 2 },
+            { text: "All my important accounts", icon: "💪", value: 5 }
           ]
         },
         {
           question: "How often do you update your browser and operating system?",
+          context: "💡 Did you know? Security updates patch vulnerabilities hackers actively exploit. Skipping updates leaves known 'doors' open for attackers.",
           answers: [
-            { text: "I ignore update notifications", value: 0 },
-            { text: "When I remember to", value: 2 },
-            { text: "As soon as updates are available", value: 5 }
+            { text: "I usually ignore update notifications", icon: "🙈", value: 0 },
+            { text: "When I remember or have time", icon: "⏰", value: 2 },
+            { text: "As soon as updates are available", icon: "🚀", value: 5 }
           ]
         },
         {
           question: "Do you have any way to monitor if your personal information appears on the dark web?",
+          context: "💡 Did you know? Stolen data is sold on the dark web within hours of a breach. Identity theft can go unnoticed for months without monitoring.",
           answers: [
-            { text: "No, I don't monitor this", value: 0 },
-            { text: "I'm not sure what that means", value: 0 },
-            { text: "Yes, I have monitoring set up", value: 5 }
+            { text: "No, I don't monitor this at all", icon: "🌑", value: 0 },
+            { text: "I'm not sure what that means", icon: "❓", value: 0 },
+            { text: "Yes, I have dark web monitoring", icon: "👁️", value: 5 }
           ]
         }
       ];
@@ -177,62 +216,60 @@
       // State
       let currentQuestion = 0;
       let score = 0;
+      let answers = {};
       const totalQuestions = questions.length;
       const maxScore = totalQuestions * 5;
 
       // DOM Elements
       const introScreen = document.getElementById('intro-screen');
-      const quizContainer = document.getElementById('quiz-container');
+      const quizScreen = document.getElementById('quiz-screen');
+      const loadingScreen = document.getElementById('loading-screen');
       const startBtn = document.getElementById('start-quiz-btn');
+      const questionNumber = document.getElementById('question-number');
       const questionText = document.getElementById('question-text');
-      const answersList = document.getElementById('answers-list');
+      const questionContext = document.getElementById('question-context');
+      const answersContainer = document.getElementById('answers-container');
       const progressFill = document.getElementById('progress-fill');
       const progressPercent = document.getElementById('progress-percent');
-      const questionNumber = document.getElementById('question-number');
-      const totalQuestionsEl = document.getElementById('total-questions');
-      const loadingScreen = document.getElementById('loading-screen');
-      const browserAlert = document.getElementById('browser-alert');
-      const browserInfo = document.getElementById('browser-info');
+      const currentQ = document.getElementById('current-q');
+      const totalQ = document.getElementById('total-q');
 
       // Browser Detection
       function detectBrowser() {
         const userAgent = navigator.userAgent;
-        let browser = 'Unknown';
-        let os = 'Unknown';
+        let browser = 'your browser';
+        let os = 'your device';
 
         // Detect OS
         if (userAgent.indexOf('Windows') > -1) os = 'Windows';
         else if (userAgent.indexOf('Mac') > -1) os = 'macOS';
         else if (userAgent.indexOf('Linux') > -1) os = 'Linux';
         else if (userAgent.indexOf('Android') > -1) os = 'Android';
-        else if (userAgent.indexOf('iOS') > -1) os = 'iOS';
+        else if (/iPad|iPhone|iPod/.test(userAgent)) os = 'iOS';
 
         // Detect Browser
-        if (userAgent.indexOf('Chrome') > -1 && userAgent.indexOf('Edg') === -1) browser = 'Chrome';
-        else if (userAgent.indexOf('Edg') > -1) browser = 'Edge';
+        if (userAgent.indexOf('Edg') > -1) browser = 'Edge';
+        else if (userAgent.indexOf('Chrome') > -1) browser = 'Chrome';
         else if (userAgent.indexOf('Firefox') > -1) browser = 'Firefox';
         else if (userAgent.indexOf('Safari') > -1) browser = 'Safari';
 
         return { browser, os };
       }
 
-      // Show browser detection
-      function showBrowserInfo() {
+      // Initialize
+      function init() {
+        totalQ.textContent = totalQuestions;
+        
+        // Set browser info
         const { browser, os } = detectBrowser();
-        if (browser !== 'Unknown' && os !== 'Unknown') {
-          browserInfo.textContent = `You're using ${browser} on ${os}. We'll personalize your assessment.`;
-          browserAlert.style.display = 'flex';
-        }
+        document.getElementById('detected-browser').textContent = browser;
+        document.getElementById('detected-os').textContent = os;
       }
 
-      // Initialize
-      totalQuestionsEl.textContent = totalQuestions;
-      showBrowserInfo();
-
-      // Start Quiz
+      // Start Quiz - HIDE intro, SHOW quiz (no scrolling)
       startBtn.addEventListener('click', function() {
         introScreen.classList.add('hidden');
-        quizContainer.classList.remove('hidden');
+        quizScreen.classList.remove('hidden');
         showQuestion(0);
       });
 
@@ -244,42 +281,50 @@
         }
 
         currentQuestion = index;
-        const question = questions[index];
+        const q = questions[index];
 
         // Update progress
-        const progress = ((index + 1) / totalQuestions) * 100;
+        const progress = Math.round((index / totalQuestions) * 100);
         progressFill.style.width = progress + '%';
-        progressPercent.textContent = Math.round(progress);
-        questionNumber.textContent = index + 1;
+        progressPercent.textContent = progress + '%';
+        currentQ.textContent = index + 1;
 
-        // Display question
-        questionText.textContent = question.question;
-        answersList.innerHTML = '';
+        // Update question number
+        questionNumber.textContent = `Question ${index + 1}`;
 
-        // Create answer buttons
-        question.answers.forEach((answer, i) => {
-          const answerBtn = document.createElement('button');
-          answerBtn.className = 'answer-btn';
-          answerBtn.textContent = answer.text;
-          answerBtn.addEventListener('click', function() {
-            selectAnswer(answer.value, i);
+        // Update question text and context
+        questionText.textContent = q.question;
+        questionContext.textContent = q.context;
+
+        // Create answer buttons with emojis
+        answersContainer.innerHTML = '';
+        q.answers.forEach((answer, i) => {
+          const btn = document.createElement('button');
+          btn.className = 'answer-btn';
+          btn.innerHTML = `
+            <span class="answer-icon">${answer.icon}</span>
+            <span class="answer-text">${answer.text}</span>
+          `;
+          btn.addEventListener('click', function() {
+            selectAnswer(answer.value, index, i);
           });
-          answersList.appendChild(answerBtn);
+          answersContainer.appendChild(btn);
         });
       }
 
       // Select Answer
-      function selectAnswer(value, index) {
+      function selectAnswer(value, questionIndex, answerIndex) {
         score += value;
+        answers[questionIndex] = answerIndex;
 
         // Visual feedback
-        const buttons = answersList.querySelectorAll('.answer-btn');
-        buttons[index].classList.add('selected');
+        const buttons = answersContainer.querySelectorAll('.answer-btn');
+        buttons[answerIndex].classList.add('selected');
 
         // Disable all buttons
         buttons.forEach(btn => btn.disabled = true);
 
-        // Auto-advance after delay
+        // Auto-advance after short delay
         setTimeout(() => {
           showQuestion(currentQuestion + 1);
         }, 400);
@@ -290,21 +335,31 @@
         // Calculate final score (0-100)
         const finalScore = Math.round((score / maxScore) * 100);
 
-        // Store answers and score
+        // Store data for results page
         sessionStorage.setItem('quizScore', finalScore);
-        sessionStorage.setItem('quizAnswers', JSON.stringify({}));
+        sessionStorage.setItem('quizAnswers', JSON.stringify(answers));
 
-        // Show loading screen
-        quizContainer.classList.add('hidden');
+        // Hide quiz, show loading
+        quizScreen.classList.add('hidden');
         loadingScreen.classList.remove('hidden');
 
-        // Redirect after delay
+        // Animate loading steps
+        const steps = ['step-1', 'step-2', 'step-3', 'step-4'];
+        steps.forEach((step, i) => {
+          setTimeout(() => {
+            document.getElementById(step).classList.add('active');
+          }, i * 500);
+        });
+
+        // Redirect after loading animation
         setTimeout(() => {
           window.location.href = `results.html?score=${finalScore}`;
-        }, 2000);
+        }, 2500);
       }
+
+      // Initialize on page load
+      init();
     })();
   </script>
 </body>
 </html>
-
