@@ -24,7 +24,7 @@ This document outlines four distinct affiliate landing page funnels designed for
 ## Funnel 1: Top 10 Comparison (Listicle)
 
 ### Live Demo
-**[View Top 10 Comparison Page](https://[YOUR-USERNAME].github.io/guardio-affiliate-funnels/pages/top-10-comparison/)**
+**[View Top 10 Comparison Page](https://noamnahon.github.io/guardio-affiliate-funnels/pages/top-10-comparison/)**
 
 ### Overview
 A comprehensive "Best Browser Security of 2025" listicle that positions Guardio as the #1 choice through objective-seeming comparison with 9 competitors.
@@ -74,7 +74,7 @@ Users in the **consideration/decision phase** who are actively comparing product
 ## Funnel 2: Quiz Funnel (Security Assessment)
 
 ### Live Demo
-**[View Quiz Funnel Page](https://[YOUR-USERNAME].github.io/guardio-affiliate-funnels/pages/quiz-funnel/)**
+**[View Quiz Funnel Page](https://noamnahon.github.io/guardio-affiliate-funnels/pages/quiz-funnel/)**
 
 ### Overview
 An interactive "Is Your Browser Secure?" assessment that engages users through personalized questions, then delivers a risk score with Guardio as the recommended solution.
@@ -129,7 +129,7 @@ Users with **medium intent** — they're not actively shopping but are security-
 ## Funnel 3: VS Comparison (Head-to-Head)
 
 ### Live Demo
-**[View VS Comparison Page](https://[YOUR-USERNAME].github.io/guardio-affiliate-funnels/pages/vs-comparison/)**
+**[View VS Comparison Page](https://noamnahon.github.io/guardio-affiliate-funnels/pages/vs-comparison/)**
 
 ### Overview
 A dynamic "Guardio vs [Competitor]" comparison page with a selector allowing users to compare Guardio against Norton, McAfee, Malwarebytes, or Bitdefender.
@@ -185,7 +185,7 @@ Users in **late-stage decision making** who have narrowed choices to 2-3 options
 ## Funnel 4: Pre-lander (Personal Story)
 
 ### Live Demo
-**[View Pre-lander Page](https://[YOUR-USERNAME].github.io/guardio-affiliate-funnels/pages/pre-lander/)**
+**[View Pre-lander Page](https://noamnahon.github.io/guardio-affiliate-funnels/pages/pre-lander/)**
 
 ### Overview
 A personal story article titled "How I Almost Lost $8,000 to a Scam That Looked Completely Real" — designed to warm up cold traffic before sending them to Guardio's homepage.
