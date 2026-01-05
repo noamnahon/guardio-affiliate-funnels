@@ -347,19 +347,31 @@
         sessionStorage.setItem('quizScore', finalScore);
         sessionStorage.setItem('quizAnswers', JSON.stringify(answers));
 
-        // Hide quiz, show loading
+        // Hide quiz, ensure intro stays hidden, show loading
         quizScreen.classList.add('hidden');
+        introScreen.classList.add('hidden'); // Make sure intro stays hidden
         loadingScreen.classList.remove('hidden');
+        
+        // Scroll to top to show loading screen
+        window.scrollTo({ top: 0, behavior: 'instant' });
+        setTimeout(() => {
+          loadingScreen.scrollIntoView({ behavior: 'instant', block: 'start' });
+        }, 10);
+
+        // Reset loading steps
+        const steps = ['step-1', 'step-2', 'step-3', 'step-4'];
+        steps.forEach(step => {
+          document.getElementById(step).classList.remove('active');
+        });
 
         // Animate loading steps
-        const steps = ['step-1', 'step-2', 'step-3', 'step-4'];
         steps.forEach((step, i) => {
           setTimeout(() => {
             document.getElementById(step).classList.add('active');
           }, i * 500);
         });
 
-        // Redirect after loading animation
+        // Redirect after loading animation completes
         setTimeout(() => {
           window.location.href = `results.html?score=${finalScore}`;
         }, 2500);
