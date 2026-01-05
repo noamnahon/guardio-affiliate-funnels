@@ -268,8 +268,16 @@
 
       // Start Quiz - HIDE intro, SHOW quiz (no scrolling)
       startBtn.addEventListener('click', function() {
+        // Scroll to top FIRST before showing quiz
+        window.scrollTo({ top: 0, behavior: 'instant' });
+        // Then hide intro and show quiz
         introScreen.classList.add('hidden');
         quizScreen.classList.remove('hidden');
+        // Ensure quiz is at top of viewport
+        setTimeout(() => {
+          window.scrollTo({ top: 0, behavior: 'instant' });
+          quizScreen.scrollIntoView({ behavior: 'instant', block: 'start' });
+        }, 10);
         showQuestion(0);
       });
 
