@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Take our free online security assessment to discover your risk level and get personalized protection recommendations.">
+  <title>Free Security Assessment | Is Your Browser Protected?</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="quiz-header">
+    <div class="container">
+      <div class="header-content">
+        <a href="../../index.html" class="logo">
+          <span class="logo-icon">🛡️</span>
+          <span class="logo-text">CyberSecurityAdvisor</span>
+        </a>
+        <span class="header-badge">✓ Independently Tested</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Quiz Intro Screen -->
+    <section class="quiz-intro" id="intro-screen">
+      <div class="container container-md">
+        <div class="intro-content text-center">
+          
+          <!-- Browser Detection Alert -->
+          <div class="alert-box" id="browser-alert" style="display: none;">
+            <span class="alert-icon">⚠️</span>
+            <div>
+              <div class="alert-title">Browser Detected</div>
+              <div class="alert-detail" id="browser-info">We've detected your browser and device to personalize your assessment.</div>
+            </div>
+          </div>
+
+          <h1>Is Your Browser Really Protected?</h1>
+          <p class="intro-subtitle">
+            Take our free 2-minute security assessment and discover your risk level
+          </p>
+          
+          <div class="trust-signals">
+            <p class="trust-text">Featured in: <strong>PCMag</strong>, <strong>Forbes</strong>, <strong>TechRadar</strong></p>
+          </div>
+
+          <button class="btn btn-primary btn-lg" id="start-quiz-btn">
+            Start Free Assessment
+          </button>
+          
+          <p class="intro-note">No email required • Takes 2 minutes • 100% free</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quiz Container (Hidden Initially) -->
+    <section class="quiz-container hidden" id="quiz-container">
+      <div class="container container-md">
+        
+        <!-- Progress Bar -->
+        <div class="quiz-progress">
+          <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+          </div>
+          <div class="progress-text">
+            <span id="progress-percent">0%</span> Complete • Question <span id="question-number">1</span> of <span id="total-questions">8</span>
+          </div>
+          <p class="nav-hint">Click an answer to continue</p>
+        </div>
+
+        <!-- Question Display -->
+        <div class="question-wrapper">
+          <div class="question-card" id="question-card">
+            <h2 class="question-text" id="question-text">Loading question...</h2>
+            <div class="answers-list" id="answers-list">
+              <!-- Answers will be inserted here -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Loading Screen (Hidden Initially) -->
+        <div class="loading-screen hidden" id="loading-screen">
+          <div class="loading-content">
+            <div class="loading-icon">🛡️</div>
+            <h2>Analyzing Your Responses...</h2>
+            <p>We're calculating your personalized security score</p>
+            <div class="loading-spinner"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="quiz-footer">
+    <div class="container text-center">
+      <p>This assessment is for educational purposes. Results are based on self-reported habits.</p>
+      <p class="footer-brand">CyberSecurityAdvisor — Independent Security Reviews Since 2019</p>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      'use strict';
+
+      // Quiz Questions (optimized for 55+ audience)
+      const questions = [
+        {
+          question: "How many different passwords do you use across your online accounts?",
+          answers: [
+            { text: "One password for everything", value: 0 },
+            { text: "2-3 passwords I rotate", value: 2 },
+            { text: "A different password for each account", value: 5 }
+          ]
+        },
+        {
+          question: "When you get an email asking you to click a link, what do you usually do?",
+          answers: [
+            { text: "Click it if it looks legitimate", value: 0 },
+            { text: "Sometimes click, sometimes check first", value: 2 },
+            { text: "Always check the sender and URL first", value: 5 }
+          ]
+        },
+        {
+          question: "Do you ever check your bank account or make purchases while on public Wi-Fi (coffee shops, airports)?",
+          answers: [
+            { text: "Yes, regularly", value: 0 },
+            { text: "Occasionally", value: 2 },
+            { text: "Never, I wait until I'm on secure Wi-Fi", value: 5 }
+          ]
+        },
+        {
+          question: "Have you ever checked if your email address was involved in a data breach?",
+          answers: [
+            { text: "No, I don't know how", value: 0 },
+            { text: "I checked once, a while ago", value: 2 },
+            { text: "Yes, I check regularly", value: 5 }
+          ]
+        },
+        {
+          question: "Do you have any browser security extensions or tools installed?",
+          answers: [
+            { text: "No, I don't have anything", value: 0 },
+            { text: "I'm not sure, maybe?", value: 1 },
+            { text: "Yes, I have protection installed", value: 5 }
+          ]
+        },
+        {
+          question: "How many of your important accounts (bank, email, social media) use two-factor authentication?",
+          answers: [
+            { text: "None of them", value: 0 },
+            { text: "Some of them", value: 2 },
+            { text: "All of them", value: 5 }
+          ]
+        },
+        {
+          question: "How often do you update your browser and operating system?",
+          answers: [
+            { text: "I ignore update notifications", value: 0 },
+            { text: "When I remember to", value: 2 },
+            { text: "As soon as updates are available", value: 5 }
+          ]
+        },
+        {
+          question: "Do you have any way to monitor if your personal information appears on the dark web?",
+          answers: [
+            { text: "No, I don't monitor this", value: 0 },
+            { text: "I'm not sure what that means", value: 0 },
+            { text: "Yes, I have monitoring set up", value: 5 }
+          ]
+        }
+      ];
+
+      // State
+      let currentQuestion = 0;
+      let score = 0;
+      const totalQuestions = questions.length;
+      const maxScore = totalQuestions * 5;
+
+      // DOM Elements
+      const introScreen = document.getElementById('intro-screen');
+      const quizContainer = document.getElementById('quiz-container');
+      const startBtn = document.getElementById('start-quiz-btn');
+      const questionText = document.getElementById('question-text');
+      const answersList = document.getElementById('answers-list');
+      const progressFill = document.getElementById('progress-fill');
+      const progressPercent = document.getElementById('progress-percent');
+      const questionNumber = document.getElementById('question-number');
+      const totalQuestionsEl = document.getElementById('total-questions');
+      const loadingScreen = document.getElementById('loading-screen');
+      const browserAlert = document.getElementById('browser-alert');
+      const browserInfo = document.getElementById('browser-info');
+
+      // Browser Detection
+      function detectBrowser() {
+        const userAgent = navigator.userAgent;
+        let browser = 'Unknown';
+        let os = 'Unknown';
+
+        // Detect OS
+        if (userAgent.indexOf('Windows') > -1) os = 'Windows';
+        else if (userAgent.indexOf('Mac') > -1) os = 'macOS';
+        else if (userAgent.indexOf('Linux') > -1) os = 'Linux';
+        else if (userAgent.indexOf('Android') > -1) os = 'Android';
+        else if (userAgent.indexOf('iOS') > -1) os = 'iOS';
+
+        // Detect Browser
+        if (userAgent.indexOf('Chrome') > -1 && userAgent.indexOf('Edg') === -1) browser = 'Chrome';
+        else if (userAgent.indexOf('Edg') > -1) browser = 'Edge';
+        else if (userAgent.indexOf('Firefox') > -1) browser = 'Firefox';
+        else if (userAgent.indexOf('Safari') > -1) browser = 'Safari';
+
+        return { browser, os };
+      }
+
+      // Show browser detection
+      function showBrowserInfo() {
+        const { browser, os } = detectBrowser();
+        if (browser !== 'Unknown' && os !== 'Unknown') {
+          browserInfo.textContent = `You're using ${browser} on ${os}. We'll personalize your assessment.`;
+          browserAlert.style.display = 'flex';
+        }
+      }
+
+      // Initialize
+      totalQuestionsEl.textContent = totalQuestions;
+      showBrowserInfo();
+
+      // Start Quiz
+      startBtn.addEventListener('click', function() {
+        introScreen.classList.add('hidden');
+        quizContainer.classList.remove('hidden');
+        showQuestion(0);
+      });
+
+      // Show Question
+      function showQuestion(index) {
+        if (index >= totalQuestions) {
+          finishQuiz();
+          return;
+        }
+
+        currentQuestion = index;
+        const question = questions[index];
+
+        // Update progress
+        const progress = ((index + 1) / totalQuestions) * 100;
+        progressFill.style.width = progress + '%';
+        progressPercent.textContent = Math.round(progress);
+        questionNumber.textContent = index + 1;
+
+        // Display question
+        questionText.textContent = question.question;
+        answersList.innerHTML = '';
+
+        // Create answer buttons
+        question.answers.forEach((answer, i) => {
+          const answerBtn = document.createElement('button');
+          answerBtn.className = 'answer-btn';
+          answerBtn.textContent = answer.text;
+          answerBtn.addEventListener('click', function() {
+            selectAnswer(answer.value, i);
+          });
+          answersList.appendChild(answerBtn);
+        });
+      }
+
+      // Select Answer
+      function selectAnswer(value, index) {
+        score += value;
+
+        // Visual feedback
+        const buttons = answersList.querySelectorAll('.answer-btn');
+        buttons[index].classList.add('selected');
+
+        // Disable all buttons
+        buttons.forEach(btn => btn.disabled = true);
+
+        // Auto-advance after delay
+        setTimeout(() => {
+          showQuestion(currentQuestion + 1);
+        }, 400);
+      }
+
+      // Finish Quiz
+      function finishQuiz() {
+        // Calculate final score (0-100)
+        const finalScore = Math.round((score / maxScore) * 100);
+
+        // Store answers and score
+        sessionStorage.setItem('quizScore', finalScore);
+        sessionStorage.setItem('quizAnswers', JSON.stringify({}));
+
+        // Show loading screen
+        quizContainer.classList.add('hidden');
+        loadingScreen.classList.remove('hidden');
+
+        // Redirect after delay
+        setTimeout(() => {
+          window.location.href = `results.html?score=${finalScore}`;
+        }, 2000);
+      }
+    })();
+  </script>
+</body>
+</html>
+
