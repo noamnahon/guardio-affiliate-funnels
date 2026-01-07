@@ -21,15 +21,6 @@ This document outlines four distinct affiliate landing page funnels designed for
 | VS Comparison | SEO / Retargeting | High | Simplification + Validation |
 | Pre-lander | Pop / Push Ads | None | Storytelling + Relatability |
 
-### Expected Performance Metrics
-
-| Funnel | Expected CVR | Target CPA | Notes |
-|--------|-------------|------------|-------|
-| Top 10 Comparison | 3-5% | $30-40 | High-intent traffic, longer consideration cycle |
-| Quiz Funnel | 8-12% | $25-35 | Medium-intent, personalization drives higher conversion |
-| VS Comparison | 4-6% | $30-40 | Late-stage buyers, competitive keyword costs |
-| Pre-lander | 1-2% (to next step) | N/A (warming) | Cold traffic, goal is intent creation, not direct conversion |
-
 ---
 
 ## Funnel 1: Top 10 Comparison (Listicle)
@@ -230,16 +221,6 @@ LOW/NO INTENT (Cold traffic)
     │
     └── Pop/Push Ads ──────────────► Pre-lander ──► guard.io
 ```
-
----
-
-## Next Steps
-
-1. **Deploy to GitHub Pages** for live demos
-2. **A/B test** headlines and CTA copy
-3. **Add tracking pixels** for conversion attribution
-4. **Create ad creatives** matching each funnel's messaging
-5. **Set up retargeting** between funnels (quiz non-completers → pre-lander, etc.)
 
 ---
 
