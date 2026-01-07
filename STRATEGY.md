@@ -10,7 +10,7 @@
 
 This document outlines four distinct affiliate landing page funnels designed for Guardio's partner program. Each funnel targets a specific traffic source and user intent level, utilizing proven psychological principles to maximize conversions.
 
-**Key Insight:** Guardio's core audience (53% female, ages 55-64) values simplicity and peace of mind over technical features. These funnels are designed with that demographic in mind while remaining effective across all age groups.
+**Key Insight:** Guardio's core audience values simplicity and peace of mind over technical features. These funnels prioritize clear communication and ease of use while remaining effective across all demographics.
 
 **Affiliate Usage:** These funnels can be white-labeled or provided as landing page templates for affiliates, reducing their barrier to entry and ensuring brand-consistent messaging. Affiliates can customize CTAs and tracking while maintaining Guardio's conversion-optimized structure.
 
@@ -188,7 +188,7 @@ Users with **no existing intent** — they weren't looking for security software
 - Problem → Near-miss → Discovery → Solution arc
 
 #### 2. Relatability & Identification
-- Linda M., 58, retired teacher — matches core demographic
+- Linda M., retired teacher — relatable persona
 - "I've been online for 20 years. I thought I knew all the tricks."
 - Specific, believable details (Amazon email, MacBook order)
 - "If it can happen to me, it can happen to anyone"
@@ -201,7 +201,7 @@ Users with **no existing intent** — they weren't looking for security software
 
 ### Conversion Elements
 - Clean, article-like design (looks editorial, not ad)
-- Large, readable text for 55+ audience
+- Large, readable text for accessibility
 - Single, soft CTA at the end
 - "Free to try • Takes 2 minutes to set up"
 - Author bio adds authenticity
