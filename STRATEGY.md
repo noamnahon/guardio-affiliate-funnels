@@ -12,12 +12,23 @@ This document outlines four distinct affiliate landing page funnels designed for
 
 **Key Insight:** Guardio's core audience (53% female, ages 55-64) values simplicity and peace of mind over technical features. These funnels are designed with that demographic in mind while remaining effective across all age groups.
 
+**Affiliate Usage:** These funnels can be white-labeled or provided as landing page templates for affiliates, reducing their barrier to entry and ensuring brand-consistent messaging. Affiliates can customize CTAs and tracking while maintaining Guardio's conversion-optimized structure.
+
 | Funnel | Traffic Type | User Intent | Primary Psychology |
 |--------|--------------|-------------|-------------------|
 | Top 10 Comparison | SEO / Paid Search | High | Authority + Social Proof |
 | Quiz Funnel | Social / Native Ads | Medium | Personalization + Commitment |
 | VS Comparison | SEO / Retargeting | High | Simplification + Validation |
 | Pre-lander | Pop / Push Ads | None | Storytelling + Relatability |
+
+### Expected Performance Metrics
+
+| Funnel | Expected CVR | Target CPA | Notes |
+|--------|-------------|------------|-------|
+| Top 10 Comparison | 3-5% | $30-40 | High-intent traffic, longer consideration cycle |
+| Quiz Funnel | 8-12% | $25-35 | Medium-intent, personalization drives higher conversion |
+| VS Comparison | 4-6% | $30-40 | Late-stage buyers, competitive keyword costs |
+| Pre-lander | 1-2% (to next step) | N/A (warming) | Cold traffic, goal is intent creation, not direct conversion |
 
 ---
 
@@ -52,16 +63,6 @@ Users in the **consideration/decision phase** who are actively comparing product
 - Competitor renewal prices prominently displayed (Norton: +140%, McAfee: +200%)
 - "Price stays the same at renewal" messaging for Guardio
 - Warning icons (⚠️) next to products with >100% price increases
-
-#### 4. Social Proof
-- Trustpilot ratings (4.3/5 with 8,000+ reviews)
-- Chrome Web Store rating (4.5/5 with 10,000+ reviews)
-- "Protects 1.5+ million users worldwide"
-- Testimonials section with verified user quotes
-
-#### 5. Scarcity/Urgency
-- "Last Updated: January 2025" creates freshness
-- "7-day free trial" with "No credit card required" reduces friction
 
 ### Conversion Elements
 - Multiple CTAs throughout (quick comparison table, each product card, sticky mobile CTA)
@@ -106,16 +107,6 @@ Users with **medium intent** — they're not actively shopping but are security-
 - Progress bar builds tension
 - Loading screen with "Analyzing your responses..." heightens reveal
 
-#### 4. Fear of Unknown Vulnerabilities
-- Questions surface risks users hadn't considered
-- "Have you checked if your email was in a data breach?" plants seeds
-- Risk score quantifies abstract fears into concrete numbers
-
-#### 5. Reciprocity
-- Free assessment provides genuine value
-- Educational content during quiz (breach statistics, threat info)
-- Users feel they "owe" attention to the recommendation
-
 ### Conversion Elements
 - Auto-advancing questions (no friction)
 - Dramatic results reveal with risk visualization
@@ -155,21 +146,11 @@ Users in **late-stage decision making** who have narrowed choices to 2-3 options
 - Running score creates momentum ("Guardio: 5, Norton: 2")
 - Visual progress reinforces Guardio's dominance
 
-#### 3. Comparison Shopping Validation
-- Users feel they've done "due diligence"
-- Detailed feature tables satisfy research needs
-- Objective-seeming format builds trust
-
-#### 4. Strategic Value Framing
+#### 3. Strategic Value Framing
 - Price comparison focuses on long-term value, not first-year discounts
 - "Price Stability" category highlights competitor renewal increases
 - Family plan value emphasized over individual pricing
 - "Your price stays the same" vs competitor price jumps
-
-#### 5. Flexibility Illusion
-- Dynamic competitor selector gives sense of control
-- Users feel they're choosing the comparison, not being sold to
-- Multiple competitors available validates Guardio's broad superiority
 
 ### Conversion Elements
 - Competitor selector for personalized comparison
@@ -212,22 +193,11 @@ Users with **no existing intent** — they weren't looking for security software
 - Specific, believable details (Amazon email, MacBook order)
 - "If it can happen to me, it can happen to anyone"
 
-#### 3. Social Proof Through Testimonial
-- Not a company claiming benefits — a real person sharing experience
-- Son's IT expertise adds credibility layer
-- "My son recommended..." trusted referral framing
-
-#### 4. Soft Sell / Discovery Framing
+#### 3. Soft Sell / Discovery Framing
 - Product never named in the story
 - Reader "discovers" the solution alongside Linda
 - CTA: "See What Helped Me →" not "Buy Now"
 - Links to Guardio homepage, not direct registration
-
-#### 5. Fear Without Fearmongering
-- Threat is real and specific (Amazon phishing)
-- But tone is empowering, not scary
-- Focus on relief and peace of mind
-- "Now I browse with confidence again"
 
 ### Conversion Elements
 - Clean, article-like design (looks editorial, not ad)
@@ -238,24 +208,6 @@ Users with **no existing intent** — they weren't looking for security software
 
 ### Critical Note
 **Never send cold traffic directly to an offer page.** Pre-landers can double conversion rates by warming users before the main pitch. This page creates the intent that other funnels assume already exists.
-
----
-
-## Technical Implementation
-
-### Built With
-- **HTML5** — Semantic markup for accessibility and SEO
-- **CSS3** — Custom properties, responsive design, animations
-- **Vanilla JavaScript** — No framework dependencies, fast loading
-
-### Performance Optimizations
-- Mobile-first responsive design
-- System fonts for fast rendering
-- Minimal JavaScript (only where interaction required)
-- No external dependencies beyond fonts
-
-### Deployment
-These pages are designed for GitHub Pages hosting but can be deployed anywhere static files are served.
 
 ---
 
